@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Social Network</title>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> --> 
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDBi3SO4pgUpX4urYoutax2V5NINLab8go",
+    authDomain: "femme-18162.firebaseapp.com",
+    databaseURL: "https://femme-18162.firebaseio.com",
+    projectId: "femme-18162",
+    storageBucket: "femme-18162.appspot.com",
+    messagingSenderId: "187773338993"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+    <input id= 'email' type='email' placeholder='Ingresa email'>
+    <input id= 'password' type='password' placeholder='Ingresa contraseña'>
+    <button id='buttonLogin'>Enviar</button>
+    <script scr='app.js'></script>
+</body>
+</html>
