@@ -22,7 +22,7 @@ buttonLogin.addEventListener('click', e => {
     let email2 = document.getElementById('email2').value;
     let password2 = document.getElementById('password2').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email2, password2)
+    firebase.auth().signInWithEmailAndPassword(email2, password2)
     .catch(function (error) {
         // Handle Errors here.
         let errorCode = error.code;
