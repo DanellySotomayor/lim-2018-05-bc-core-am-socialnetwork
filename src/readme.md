@@ -94,7 +94,9 @@ Para confirmar los resultados del benchmarking y las encuestas, realizamos dos e
 **Highlights - Entrevista 01**
 
 Entrevistada: Katherine Chimoy Vega (25 años), publicista y activista del movimiento Ni una menos.
+
 * ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista?
+
 *No, hasta el momento no he visto ninguno sobre el tema.*
 
 * ¿Qué te imaginas cuando se menciona “red social feminista”?
@@ -113,5 +115,52 @@ Entrevistada: Katherine Chimoy Vega (25 años), publicista y activista del movim
 
 * ¿De qué colores se imaginan una red social como esta?
 *Me lo imagino con colores representativos de los movimientos feministas: morado por Ni una menos, y verde por el movimiento a favor del aborto.*
+
+
+**Highlights - Entrevista 02**
+
+Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
+
+* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista?
+
+*No, solo he visto páginas de ese corte en Facebook pero no una red en sí.*
+
+* ¿Qué te imaginas cuando se menciona “red social feminista”?
+
+*Un espacio para compartir información, y para poder prevenir. Es lo que hace falta: prevenir informando todo lo que se pueda.*
+
+* ¿Para qué utilizarían esta red social?
+
+*Desde mi carrera, apoyaría en labor de prevención. Quizá segmentando una parte especial para brindar apoyo a las que lo necesiten.*
+
+* ¿Creen que sería útil una red social como esta?
+
+*Sí, de todas maneras hace falta, especialmente en estos tiempos donde hay mucha violencia contra la mujer.*
+
+* ¿Qué temas esperarían que se compartan en una red social como esta?
+
+*Información sobre las últimas noticias que vemos acerca del tema, enlaces a libros o eventos feministas, consejos, imágenes.*
+
+* ¿Qué opciones esperarían encontrar en una red social como esta?
+
+*Dos opciones, una que involucre a las afectadas o aquellas que necesiten algún tipo de apoyo, un lugar donde puedan dejar sus consultas o dudas, y otra donde aquellas personas que queramos brindar apoyo podamos hacerlo de manera sencilla. Creo que serviría más que nada para conectar personas que queremos ayudar con aquellas que lo necesitan.*
+
+* ¿De qué colores se imaginan una red social como esta?
+
+*Colores vivos, como el naranja o amarillo.*
+
+
+## Definición del producto
+
+Luego de realizar la investigación previa, hemos planteado una red social feminista que incluirá lo siguiente:
+* 
+* 
+* 
+
+Tendrá como nombre **Nombre**.
+
+### Prototipo de alta fidelidad
+
+A continuación presentamos el primer modelo de alta fidelidad elaborado en Figma para móbiles y PC, diseñado siguiente el principio Mobile First.
 
 
