@@ -23,22 +23,47 @@ Analizamos páginas web y redes sociales similares a la temática que vamos a im
 
 En segundo lugar, hemos analizado 5 páginas (entre páginas web y perfiles de Facebook) que cuentan con una temática similar a la que queremos plasmar en nuestra red social:
 
-[**MAKERS**] [1]
-[1] : https://www.makers.com/about 
+[**MAKERS**](https://www.makers.com/about)
 
-: Media Brand feminista que realiza contenido original que comparte en sus redes sociales. Se apoya en la producción de videos y contenido audiovisual.
+ : Media Brand feminista que realiza contenido original que comparte en sus redes sociales. Se apoya en la producción de videos y contenido audiovisual.
 En Facebook comparte enlaces a su propia página web e imágenes con contenido exclusivo para redes, lo cual se aprecia en las medidas. 
 El contenido que publican consta de entrevistas a mujeres del medio (actrices, deportistas, políticos, chefs, aliados, etc.), fotografías positivas, enlaces a contenido de su web, entre otros relacionados. El engagement se refleja en las veces en que su contenido fue compartido, sin embargo, no impulsa la interacción en los comentarios.
 
-Gurlstalk: http://www.gurlstalk.com/ 
-Plataforma web y red social creada para que las mujeres puedan compartir experiencias y sentimientos sin ser juzgadas. 
+[**GURLSTALK**](http://www.gurlstalk.com/)
+
+ : Plataforma web y red social creada para que las mujeres puedan compartir experiencias y sentimientos sin ser juzgadas. 
 Utiliza como redes principales el Facebook e Instagram para compartir información sobre body positivism a través de poesía, ensayos, fotografía y arte. Su página web no permite la interacción.
 
-Ladies Get Paid: http://www.ladiesgetpaid.com/partner-2/ 
-Social network donde mujeres comparten consejos, asesorías y eventos referentes a la colocación laboral. Brindan herramientas a las mujeres y empresas para que puedan incrementar ya sea el número de mujeres que laboran o el salario que se merecen.
+[**LADIES GET PAID**](http://www.ladiesgetpaid.com/partner-2/)
+
+ : Social network donde mujeres comparten consejos, asesorías y eventos referentes a la colocación laboral. Brindan herramientas a las mujeres y empresas para que puedan incrementar ya sea el número de mujeres que laboran o el salario que se merecen.
 Sí brinda una plataforma dedicada exclusivamente a la mujer, sin embargo, el contenido se comparte a través del formato de blog, lo cual no permite la interacción en su página web, tan solo en sus redes sociales.
 
-Woman Interruptd: http://womaninterruptedapp.com/en/ 
-A pesar de no ser una red social, es una aplicación que involucra al feminismo y se considera como una propuesta tecnológica interesante.
+[**WOMAN INTERRUPTD**](http://womaninterruptedapp.com/en/)
+
+ : A pesar de no ser una red social, es una aplicación que involucra al feminismo y se considera como una propuesta tecnológica interesante.
 Permite registrar las veces en que una mujer es interrumpida por un hombre cuando está hablando. Así, recolecta data y la transforma en estadísticas que reflejan esa problemática.
+
+### Encuestas
+Luego de la información recolectada en el benchmarking, se realizó la siguiente encuesta para corroborar lo obtenido:
+
+Relación de preguntas:
+1. ¿Te consideras feminista?
+2.	¿Estarías interesadx en formar parte de una red social feminista?
+3.	En escala del 1 (nunca) al 5 (siempre) indica qué tan activamente has participado en las actividades de la comunidad feminista de tu ciudad.
+4.	¿Qué tipo de actividades te gustaría realizar dentro de la red social feminista? Puedes marcar más de una opción.
+ * Conocer más personas feministas.
+ * Organizar y participar en eventos.
+ * Estar actualizad@ sobre las noticias que afectan a la comunidad feminista.
+ * Subir y bajar información (fotos, videos y textos) vinculados al movimiento.
+ * Otro:
+5.	¿Qué tipo de actividad te gustaría asumir dentro de la red social feminista? Puedes marcar más de una opción.
+ * Me gustaría recibir asesoría legal.
+ * Me gustaría brindar asesoría legal.
+ * Me gustaría recibir asesoría psicológica.
+ * Me gustaría brindar asesoría psicológica.
+ * Me gustaría recibir asesoría en otro tipo de ámbito.
+ * Me gustaría brindar asesoría en otro tipo de ámbito.
+
+
 
