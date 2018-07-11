@@ -47,7 +47,7 @@ Permite registrar las veces en que una mujer es interrumpida por un hombre cuand
 ### Encuestas
 Luego de la información recolectada en el benchmarking, se realizó la siguiente encuesta para corroborar lo obtenido:
 
-![Encuesta](linkhttps://github.com/DanellySotomayor/lim-2018-05-bc-core-am-socialnetwork/blob/master/img/Encuesta-socialnetwork.jpg "Encuesta principal")
+![Encuesta](https://github.com/DanellySotomayor/lim-2018-05-bc-core-am-socialnetwork/blob/master/img/Encuesta-socialnetwork.jpg "Encuesta principal")
 
 Relación de preguntas:
 1. ¿Te consideras feminista?
@@ -85,5 +85,33 @@ En otra pregunta, el 80,7% considera que esta red social le serviría para estar
 Con respecto a la pregunta sobre qué actividad o rol asumiría dentro de esta red social, un 42,5% le gustaría brindar asesoría en otro tipo de ámbito, diferente a la legal y psicológica. Asimismo, un 37,7% le gustaría recibir asesoría legal.
 
 ![Resultado3](https://github.com/DanellySotomayor/lim-2018-05-bc-core-am-socialnetwork/blob/master/img/R3-encuesta-socialnetwork.jpg "Resultado 3")
+
+
+### Entrevista a usuarios:
+
+Para confirmar los resultados del benchmarking y las encuestas, realizamos dos entrevistas a posibles usuarias de esta red.
+
+**Highlights - Entrevista 01**
+
+Entrevistada: Katherine Chimoy Vega (25 años), publicista y activista del movimiento Ni una menos.
+* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista?
+*No, hasta el momento no he visto ninguno sobre el tema.*
+
+* ¿Qué te imaginas cuando se menciona “red social feminista”?
+*Un espacio libre para denuncias, donde no tengas riesgo de ser atacado. Un espacio para liberarte, como en el grupo de Ni una menos, pero trasladado a una red social. Donde el acceso pueda ser regulado y no entre gente que te ataque o use tus palabras en tu contra.*
+
+* ¿Para qué utilizarías esta red social?
+*Para encontrar apoyo. Personalmente me desgasta mucho compartir mis ideas y verme cuestionada o atacada constantemente en las redes que suelo utilizar. Sería como un lugar donde me pueda sentir libre de expresarme y compartir lo que pienso, y donde además podría encontrar apoyo en lxs demás usuarixs.*
+* ¿Crees que sería útil una red social como esta?
+*Sí, porque no existe hasta el momento. Puede ser un espacio para personas que de verdad tienen el objetivo de aprender sobre el tema. Sería muy chévere encontrar un espacio donde haya gente que te puede asesorar. Por ejemplo, en la red de Ni una menos, solo podemos derivar a las personas que nos consultan a la línea 100, pero no hay alguien especial que pueda darle asesoría.*
+
+* ¿Qué temas esperarías que se compartan en una red social como esta?
+*Entretenimiento, imágenes, links de información. Cosas que en parte también sirvan de distracción para nosotras, pero que aún así nos mantengan informadas.*
+
+* ¿Qué opciones esperarían encontrar en una red social como esta?
+*Un muro donde compartir lo que una (usuarix) desee y aparte, un chat o canal donde podamos realizar consultas y otrxs usuarixs nos puedan asesorar sin juzgarnos.*
+
+* ¿De qué colores se imaginan una red social como esta?
+*Me lo imagino con colores representativos de los movimientos feministas: morado por Ni una menos, y verde por el movimiento a favor del aborto.*
 
 
