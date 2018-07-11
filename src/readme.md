@@ -121,33 +121,19 @@ Entrevistada: Katherine Chimoy Vega (25 años), publicista y activista del movim
 
 Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
 
-* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista?
+* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista? *No, solo he visto páginas de ese corte en Facebook pero no una red en sí.*
 
-*No, solo he visto páginas de ese corte en Facebook pero no una red en sí.*
+* ¿Qué te imaginas cuando se menciona “red social feminista”? *Un espacio para compartir información, y para poder prevenir. Es lo que hace falta: prevenir informando todo lo que se pueda.*
 
-* ¿Qué te imaginas cuando se menciona “red social feminista”?
+* ¿Para qué utilizarían esta red social? *Desde mi carrera, apoyaría en labor de prevención. Quizá segmentando una parte especial para brindar apoyo a las que lo necesiten.*
 
-*Un espacio para compartir información, y para poder prevenir. Es lo que hace falta: prevenir informando todo lo que se pueda.*
+* ¿Creen que sería útil una red social como esta? *Sí, de todas maneras hace falta, especialmente en estos tiempos donde hay mucha violencia contra la mujer.*
 
-* ¿Para qué utilizarían esta red social?
+* ¿Qué temas esperarían que se compartan en una red social como esta? *Información sobre las últimas noticias que vemos acerca del tema, enlaces a libros o eventos feministas, consejos, imágenes.*
 
-*Desde mi carrera, apoyaría en labor de prevención. Quizá segmentando una parte especial para brindar apoyo a las que lo necesiten.*
+* ¿Qué opciones esperarían encontrar en una red social como esta? *Dos opciones, una que involucre a las afectadas o aquellas que necesiten algún tipo de apoyo, un lugar donde puedan dejar sus consultas o dudas, y otra donde aquellas personas que queramos brindar apoyo podamos hacerlo de manera sencilla. Creo que serviría más que nada para conectar personas que queremos ayudar con aquellas que lo necesitan.*
 
-* ¿Creen que sería útil una red social como esta?
-
-*Sí, de todas maneras hace falta, especialmente en estos tiempos donde hay mucha violencia contra la mujer.*
-
-* ¿Qué temas esperarían que se compartan en una red social como esta?
-
-*Información sobre las últimas noticias que vemos acerca del tema, enlaces a libros o eventos feministas, consejos, imágenes.*
-
-* ¿Qué opciones esperarían encontrar en una red social como esta?
-
-*Dos opciones, una que involucre a las afectadas o aquellas que necesiten algún tipo de apoyo, un lugar donde puedan dejar sus consultas o dudas, y otra donde aquellas personas que queramos brindar apoyo podamos hacerlo de manera sencilla. Creo que serviría más que nada para conectar personas que queremos ayudar con aquellas que lo necesitan.*
-
-* ¿De qué colores se imaginan una red social como esta?
-
-*Colores vivos, como el naranja o amarillo.*
+* ¿De qué colores se imaginan una red social como esta? *Colores vivos, como el naranja o amarillo.*
 
 
 ## Definición del producto
