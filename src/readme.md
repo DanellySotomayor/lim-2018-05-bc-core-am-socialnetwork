@@ -95,9 +95,7 @@ Para confirmar los resultados del benchmarking y las encuestas, realizamos dos e
 
 Entrevistada: Katherine Chimoy Vega (25 años), publicista y activista del movimiento Ni una menos.
 
-* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista?
-
-*No, hasta el momento no he visto ninguno sobre el tema.*
+* ¿Conoces alguna red social, como Facebook, Twitter o Instagram, dedicada exclusivamente al movimiento feminista? *No, hasta el momento no he visto ninguno sobre el tema.*
 
 * ¿Qué te imaginas cuando se menciona “red social feminista”?
 *Un espacio libre para denuncias, donde no tengas riesgo de ser atacado. Un espacio para liberarte, como en el grupo de Ni una menos, pero trasladado a una red social. Donde el acceso pueda ser regulado y no entre gente que te ataque o use tus palabras en tu contra.*
@@ -149,4 +147,7 @@ Tendrá como nombre **Nombre**.
 
 A continuación presentamos el primer modelo de alta fidelidad elaborado en Figma para móbiles y PC, diseñado siguiente el principio Mobile First.
 
-
+## Equipo de trabajo
+* [Maria Elena Zúñiga](https://github.com/malenazp)
+* [Leyla Ticze](https://github.com/ticze)
+* [Danelly Sotomayor](https://github.com/DanellySotomayor)
