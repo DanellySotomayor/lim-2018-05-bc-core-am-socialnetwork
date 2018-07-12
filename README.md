@@ -146,9 +146,10 @@ Tendrá como nombre **Nombre**.
 ### Prototipo de alta fidelidad
 
 A continuación presentamos el primer modelo de alta fidelidad elaborado en Figma para móbiles y PC, diseñado siguiente el principio Mobile First.
-
+##### 1)Prototipo mobil:
 ![prototipo1](img/REDES.gif)
 
+##### 2)Prototipo pc: 
 ![prototipo1](img/red9.gif)
 
 ## Equipo de trabajo
