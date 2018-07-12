@@ -6,7 +6,7 @@ function register() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
-             verify();
+            verify();
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -42,7 +42,7 @@ function observer() {
             var displayName = user.displayName;
             var email = user.email;
             console.log("******************");
-            console.log(user.emailVerified); 
+            console.log(user.emailVerified);
             console.log("******************");
 
             var emailVerified = user.emailVerified;
@@ -64,8 +64,8 @@ observer();
 function messageForUser(user) {
     var user = user;
     const contenido = document.getElementById('contenido');
-    if (user.emailVerified){
-        contenido.innerHTML =`
+    if (user.emailVerified) {
+        contenido.innerHTML = `
     <div class="container mt-5">
         <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
@@ -78,7 +78,6 @@ function messageForUser(user) {
     `;
     }
 }
-
 
 function cerrar() {
     firebase.auth().signOut()
@@ -101,4 +100,33 @@ function verify() {
     });
 }
 
-//CRUD: Create Reade Update Delete
+const buttonFacebook = document.getElementById('facebook');
+const buttonGmail = document.getElementById('gmail');
+
+buttonFacebook.addEventListener('click', e => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('user_birthday');
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        const token = result.credential.accessToken;
+        const user = result.user;
+    }).catch(function(error) {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        let email = error.email;
+        let credential = error.credential;
+      });
+});
+
+buttonGmail.addEventListener('click', e => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        const token = result.credential.accessToken;
+        const user = result.user;
+    }).catch(error => {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        let email = error.email;
+        let credential = error.credential;
+    });
+});
