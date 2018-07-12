@@ -16,10 +16,33 @@ a {
 }
 
 .barra{
+    background-color: #9b64bc;
     border: solid 2px #535253;
     border-radius: 10px 10px 10px 10px;
     padding: 18px;
     position: relative; 
 }
 
+.modal-body{
+    background-color: #9b64bc;
+}
 
+.icon-facebook, .icon-google {
+    border-radius: 20%;
+    background: rgba(223, 223, 223, 0.4);
+    cursor: pointer;
+    
+} 
+
+.icon-facebook:hover{
+    background: #ffffff;   
+} 
+.icon-google:hover{
+    background: #b83e3e;  
+}
+
+img {
+    height: 25px;  
+    width: 25px;
+    border-radius: 5px 5px 5px 5px;
+}

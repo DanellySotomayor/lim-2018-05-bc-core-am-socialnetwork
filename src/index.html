@@ -16,13 +16,15 @@
 
 <body>
     <div class='container mt-2'>
-        <nav class='navbar navbar-light barra' style='background-color: #9b64bc;'>
+        <nav class='navbar navbar-light barra'>
             <a class='navbar-brand iamher'>Femme Hive Social Network</a>
             <div class='form-inline'>
                 <input id='email2' type='email' placeholder='Ingresa email' class='form-control form-control-sm mr-sm-2'>
                 <input id='password2' type='password' placeholder='Ingresa contraseña' class=' form-control form-control-sm mr-sm-2'>
                 <button class='btn btn-dark my-2 my-sm-0 btn-sm' onclick="login()">Iniciar Sesión</button>
                 <button class='btn btn-success my-2 my-sm-0 btn-sm ml-2' data-toggle='modal' data-target='#exampleModal'>Registrarme</button>
+                <button type="button" class="icon-facebook ml-2" id="facebook"><img src="../src/img/logofacebook.png"/></button>
+                <button type="button" class="icon-google ml-2" id="gmail"><img src="../src/img/logogmail.png"/></button>
             </div>
         </nav>
     </div>
@@ -37,7 +39,7 @@
                         <span aria-hidden='true'>&times;</span>
                     </button>
                 </div>
-                <div class='modal-body' style='background-color: #9b64bc;'>
+                <div class='modal-body'>
                     <input id='email' type='email' placeholder='Ingresa un e-mail de registro válido' class='form-control'>
                     <div class='mt-2'></div>
                     <input id='password' type='password' placeholder='Ingresa contraseña de 6 caracteres o más' class='form-control'>
