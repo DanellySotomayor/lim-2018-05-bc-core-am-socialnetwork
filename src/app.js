@@ -100,33 +100,67 @@ function verify() {
     });
 }
 
-const buttonFacebook = document.getElementById('facebook');
 const buttonGmail = document.getElementById('gmail');
-
-buttonFacebook.addEventListener('click', e => {
-    const provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        const token = result.credential.accessToken;
-        const user = result.user;
-    }).catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
-      });
-});
+const buttonFacebook = document.getElementById('facebook');
 
 buttonGmail.addEventListener('click', e => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        const token = result.credential.accessToken;
-        const user = result.user;
-    }).catch(error => {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
-    });
-});
+    loginGmail();
+})
+
+buttonFacebook.addEventListener('click', e => {
+    loginFacebook();
+})
+
+const loginGmail = () => {
+    if (!firebase.auth().currentUser) {
+        let provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        firebase.auth().signInWithPopup(provider)
+            .then(function (result) {
+                let token = result.credential.accesstoken;
+                let user = result.user;
+                const name = result.user.displayName;
+                showGreeting(user);
+                console.log(user);
+
+
+            })
+            .catch(function (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const errorEmail = error.email;
+                const credential = error.credential;
+                if (errorCode === 'auth/account-exits-with-different-credential') {
+                    alert('Es el mismo usuario');
+                }
+            });
+    } else {
+        firebase.auth().signOut();
+    }
+}
+
+const loginFacebook = () => {
+    if (!firebase.auth().currentUser) {
+        let provider = new firebase.auth.FacebookAuthProvider();
+        provider.addScope('public_profile');
+        firebase.auth().signInWithPopup(provider)
+            .then(function (result) {
+                let token = result.credential.accesstoken;
+                let user = result.user;
+                showGreeting(user);
+                console.log(user);
+
+            })
+            .catch(function (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const errorEmail = error.email;
+                const credential = error.credential;
+                if (errorCode === 'auth/account-exits-with-different-credential') {
+                    alert('Es el mismo usuario');
+                }
+            });
+    } else {
+        firebase.auth().signOut();
+    }
+}
