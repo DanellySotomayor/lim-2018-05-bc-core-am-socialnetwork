@@ -66,7 +66,7 @@ function messageForUser(user) {
     const contenido = document.getElementById('contenido');
     if (user.emailVerified) {
         contenido.innerHTML = `
-    <div class="container mt-5">
+    <div class="container mt-5" id="root">
         <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
         <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
@@ -101,7 +101,6 @@ function verify() {
 }
 
 const buttonFacebook = document.getElementById('facebook');
-const buttonGmail = document.getElementById('gmail');
 
 buttonFacebook.addEventListener('click', e => {
     const provider = new firebase.auth.FacebookAuthProvider();
@@ -117,16 +116,13 @@ buttonFacebook.addEventListener('click', e => {
       });
 });
 
-buttonGmail.addEventListener('click', e => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        const token = result.credential.accessToken;
-        const user = result.user;
-    }).catch(error => {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
+const provider = new firebase.auth.GoogleAuthProvider();
+$('#gmail').click(function(){
+    firebase.auth()
+    .signInWithPopup(provider)
+    .then(function (result) {
+    console.log(result.user);
+    $('#gmail').hide();
+    $('#contenido').append("<img src='"+result.user.photoURL+"' />")
     });
 });
