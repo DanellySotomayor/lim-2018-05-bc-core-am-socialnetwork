@@ -137,11 +137,18 @@ Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
 ## Definición del producto
 
 Luego de realizar la investigación previa, hemos planteado una red social feminista que incluirá lo siguiente:
-* 
-* 
-* 
+* Registro de usuarios con correo electrónico
+* Registro de usuarios con Facebook y Gmail
+* Log in de usuarios con correo, Facebook y Gmail
+* Muro principal con posibilidad de compartir posts públicos
 
-Tendrá como nombre **Nombre**.
+**Nombre**
+
+Hemos optado por utilizar el nombre "U+US" ya que se refiere a la comunidad que se forma alrededor de un usuario que necesita apoyo.
+
+**Colores**
+Luego de lo conversado con los usuarios, llegamos a la elección de que la paleta de colores debe estar asociada a los movimientos feministas que ya existen para poder ganar afluencia de manera rápido: morado y verde.
+
 
 ### Prototipo de alta fidelidad
 
