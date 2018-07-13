@@ -66,7 +66,7 @@ function messageForUser(user) {
     const contenido = document.getElementById('contenido');
     if (user.emailVerified) {
         contenido.innerHTML = `
-    <div class="container mt-5">
+    <div class="container mt-5" id="root">
         <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
         <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
@@ -100,67 +100,29 @@ function verify() {
     });
 }
 
-const buttonGmail = document.getElementById('gmail');
 const buttonFacebook = document.getElementById('facebook');
 
-buttonGmail.addEventListener('click', e => {
-    loginGmail();
-})
-
 buttonFacebook.addEventListener('click', e => {
-    loginFacebook();
-})
+    const provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('user_birthday');
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        const token = result.credential.accessToken;
+        const user = result.user;
+    }).catch(function(error) {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        let email = error.email;
+        let credential = error.credential;
+      });
+});
 
-const loginGmail = () => {
-    if (!firebase.auth().currentUser) {
-        let provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('https://www.googleapis.com/auth/plus.login');
-        firebase.auth().signInWithPopup(provider)
-            .then(function (result) {
-                let token = result.credential.accesstoken;
-                let user = result.user;
-                const name = result.user.displayName;
-                showGreeting(user);
-                console.log(user);
-
-
-            })
-            .catch(function (error) {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const errorEmail = error.email;
-                const credential = error.credential;
-                if (errorCode === 'auth/account-exits-with-different-credential') {
-                    alert('Es el mismo usuario');
-                }
-            });
-    } else {
-        firebase.auth().signOut();
-    }
-}
-
-const loginFacebook = () => {
-    if (!firebase.auth().currentUser) {
-        let provider = new firebase.auth.FacebookAuthProvider();
-        provider.addScope('public_profile');
-        firebase.auth().signInWithPopup(provider)
-            .then(function (result) {
-                let token = result.credential.accesstoken;
-                let user = result.user;
-                showGreeting(user);
-                console.log(user);
-
-            })
-            .catch(function (error) {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const errorEmail = error.email;
-                const credential = error.credential;
-                if (errorCode === 'auth/account-exits-with-different-credential') {
-                    alert('Es el mismo usuario');
-                }
-            });
-    } else {
-        firebase.auth().signOut();
-    }
-}
+const provider = new firebase.auth.GoogleAuthProvider();
+$('#gmail').click(function(){
+    firebase.auth()
+    .signInWithPopup(provider)
+    .then(function (result) {
+    console.log(result.user);
+    $('#gmail').hide();
+    $('#contenido').append("<img src='"+result.user.photoURL+"' />")
+    });
+});
