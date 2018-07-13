@@ -1,11 +1,23 @@
 body{
-    background-image:url('../src/img/indexwallpaper2.jpeg');
+    background: #ffffff;
     background-size: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    background: #705073;
+    height: 100px;
+    align-content: flex-end;
+}
+
+header .logo {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
 }
 
 a {  
     font-weight: 300;
-    font-family: sans-serif;
+    font-family: inherit;
     text-align: center;
     float: right;
 }
@@ -16,7 +28,7 @@ a {
 }
 
 .barra{
-    background-color: #9b64bc;
+    background-color: #705073;
     border: solid 2px #535253;
     border-radius: 10px 10px 10px 10px;
     padding: 18px;
