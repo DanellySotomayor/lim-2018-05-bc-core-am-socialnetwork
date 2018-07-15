@@ -1,5 +1,6 @@
-h4,
+header,
 div{
   font-family: "Open Sans", sans-serif;
-  border: 5px solid;
+  border: 2px solid;
+  margin: 7px;
 }
