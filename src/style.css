@@ -11,6 +11,9 @@ html, body {
 header {
   height: 100px;
   background-color: #705073;
+  font-size: 36px;
+  color: #ffffff;
+  padding: 25px;
 }
 
 .row {
@@ -76,7 +79,7 @@ header {
     color: #ffffff;
     background-color: #ffffff;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /* transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
 }
 
 .form-signin .form-control {
@@ -155,3 +158,4 @@ img {
     width: 25px;
     border-radius: 5px;
 }
+
