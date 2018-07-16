@@ -101,6 +101,15 @@ function verify() {
     });
 }
 
+const providerfb = new firebase.auth.FacebookAuthProvider();
+$('#facebook').click(function(){
+  firebase.auth()
+    .signInWithPopup(providerfb)
+    .then(function(result) {
+      guardarDatos(result.user);
+    });
+});
+
 const provider = new firebase.auth.GoogleAuthProvider();
 $('#gmail').click(function(){
     firebase.auth()
@@ -120,4 +129,10 @@ $('#facebook').click(function(){
     .then(function(result) {
       guardarDatos(result.user);
     });
+});
+
+//>----------------------------------
+$('#register').click(function(){
+    $('#register-form').show();
+    $('#form-signin').hide();
 })
