@@ -100,20 +100,13 @@ function verify() {
     });
 }
 
-const buttonFacebook = document.getElementById('facebook');
-
-buttonFacebook.addEventListener('click', e => {
-    const provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        const token = result.credential.accessToken;
-        const user = result.user;
-    }).catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
-      });
+const providerfb = new firebase.auth.FacebookAuthProvider();
+$('#facebook').click(function(){
+  firebase.auth()
+    .signInWithPopup(providerfb)
+    .then(function(result) {
+      guardarDatos(result.user);
+    });
 });
 
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -126,3 +119,9 @@ $('#gmail').click(function(){
     $('#contenido').append("<img src='"+result.user.photoURL+"' />")
     });
 });
+
+//>----------------------------------
+$('#register').click(function(){
+    $('#register-form').show();
+    $('#form-signin').hide();
+})

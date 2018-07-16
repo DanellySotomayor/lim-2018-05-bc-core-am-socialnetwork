@@ -14,10 +14,10 @@
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script src="firebaseproject.js"></script>
 </head>
-<header>U+Us El feminismo es para todxs</header>
 <body>
+<header>U+Us El feminismo es para todxs</header>
 <div class="row">
-    <div class="form-signin">
+    <div class="form-signin" id="form-signin">
         <img class="logo-uss" src="../src/img/uss.png"></img>
         <h1 class="h3 mb-3 font-weight-normal">Ingresa</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -25,23 +25,17 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input id="password2" type="password" placeholder="Contraseña" class=" form-control">
         <button class="btn btn-dark" onclick="login()">Iniciar sesión</button>
-        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Registrarme</button>
+        <button class="btn btn-success" id="register">Registrarme</button>
         <br><br>
         <p style="color: #ffffff">O ingresa con:</p>
         <button type="button" class="icon-facebook ml-2" id="facebook"><img src="../src/img/logofacebook.png"/></button>
         <button type="button" class="icon-google ml-2" id="gmail"><img src="../src/img/logogmail.png"/></button>
     </div>  
-  <div class="normas">
-      <h2>¡Bienvenidx!</h2>
-      <p>En U+US encontrarás un espacio donde compartir tus ideas, experiencias y testimonios de amor y empoderamiento libremente. Sin embargo, el respeto y la solidaridad con lxs demás es lo más importante, por eso tenemos unas sencillas normas:</p>
-      <p>- Los insultos, mensajes de odio e intolerancia serán borrados inmediatamente y el usuario eliminado de la plataforma.</p>  
-      <p>- La información privada, denuncias, testimonios o conversaciones no pueden llevarse a otros espacios o plataformas sin autorización. Queremos que este sea un lugar seguro para todxs.</p>
-    </div>
 </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+    <div class="register" id="register-form">
+        <!-- <div class="modal-dialog" role="document">
+            <div class="modal-content"> -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">¿Quieres unirte a la red? ¡Registrate aquí!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -61,6 +55,12 @@
         </div>
     </div>
 
+    <div class="normas">
+        <h2>¡Bienvenidx!</h2>
+        <p>En U+US encontrarás un espacio donde compartir tus ideas, experiencias y testimonios de amor y empoderamiento libremente. Sin embargo, el respeto y la solidaridad con lxs demás es lo más importante, por eso tenemos unas sencillas normas:</p>
+        <p>- Los insultos, mensajes de odio e intolerancia serán borrados inmediatamente y el usuario eliminado de la plataforma.</p>  
+        <p>- La información privada, denuncias, testimonios o conversaciones no pueden llevarse a otros espacios o plataformas sin autorización. Queremos que este sea un lugar seguro para todxs.</p>
+      </div>
     <div id="contenido">
     </div>
 
