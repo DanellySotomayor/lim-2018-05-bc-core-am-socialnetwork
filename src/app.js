@@ -14,6 +14,7 @@ function register() {
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
+            alert
         });
 }
 
@@ -100,29 +101,23 @@ function verify() {
     });
 }
 
-const buttonFacebook = document.getElementById('facebook');
-
-buttonFacebook.addEventListener('click', e => {
-    const provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        const token = result.credential.accessToken;
-        const user = result.user;
-    }).catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
-      });
-});
-
 const provider = new firebase.auth.GoogleAuthProvider();
 $('#gmail').click(function(){
     firebase.auth()
     .signInWithPopup(provider)
     .then(function (result) {
     console.log(result.user);
-    $('#gmail').hide();
-    $('#contenido').append("<img src='"+result.user.photoURL+"' />")
+    //$('#gmail').hide();
+    $('#root').append("<img src='"+result.user.photoURL+"' />")
     });
 });
+
+
+const providerfb = new firebase.auth.FacebookAuthProvider();
+$('#facebook').click(function(){
+  firebase.auth()
+    .signInWithPopup(providerfb)
+    .then(function(result) {
+      guardarDatos(result.user);
+    });
+})
