@@ -24,6 +24,8 @@ function guardar() {
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
+  } else {
+    alert('Se olvido de escribir un Post')
   }
 
 }
@@ -36,7 +38,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     tabla.innerHTML += `
       <div> 
-        <textarea >${doc.data().first}</textarea>
+        <textarea disabled>${doc.data().first}</textarea>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <i class="fas fa-ellipsis-h"></i>
@@ -65,7 +67,7 @@ function editar(id, nombre) {
   document.getElementById('nombre').value = nombre;
 
   const boton = document.getElementById('boton');
-  boton.innerHTML = 'Editar';
+  boton.innerHTML = 'Guardar';
   boton.onclick = function () {
     const usersRef = db.collection("users").doc(id);
     // Set the "capital" field of the city 'DC'
@@ -86,4 +88,3 @@ function editar(id, nombre) {
       });
   }
 }
-
