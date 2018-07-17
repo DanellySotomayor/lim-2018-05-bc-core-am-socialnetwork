@@ -14,6 +14,7 @@ function register() {
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
+            alert
         });
 }
 
