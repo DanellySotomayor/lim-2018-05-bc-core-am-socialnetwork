@@ -25,7 +25,7 @@
         <div class="mt-2"></div>
         <label for="inputPassword" class="sr-only">Password</label>
         <input id="password2" type="password" placeholder="Contraseña" class=" form-control">
-        <button class="btn btn-dark" onclick="login()">Iniciar sesión</button>
+        <button class="btn btn-dark" onclick="login()" id="iniciar">Iniciar sesión</button>
         <button class="btn btn-success" id="register">Registrarme</button>
         <br><br>
         <p style="color: #ffffff">O ingresa con:</p>
@@ -33,24 +33,34 @@
         <button type="button" class="icon-google ml-2" id="gmail"><img src="../src/img/logogmail.png"/></button>
     </div>  
 </div>
-    <!-- Modal -->
+
     <div class="register" id="register-form">
-        <!-- <div class="modal-dialog" role="document">
-            <div class="modal-content"> -->
+                <div class="row">
+                    <h5 class="h3 mb-3 font-weight-normal">¿Quieres unirte a la red? ¡Registrate aquí!</h5>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required="true" class="form-control">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true"  class="form-control">
+                    <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' onclick="register()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->    
+    <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>    
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">¿Quieres unirte a la red? ¡Registrate aquí!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLongTitle">¡Bienvenidx!</h5>
+                    <button type="button" class="close" id="closeRegister" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" class="form-control">
-                    <div class="mt-2"></div>
-                    <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" class="form-control">
+                    <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" onclick="register()">Guardar</button>
+                    <button type="button" class="btn btn-success" id="goLogin">Ir a inicio de sesión</button>
                 </div>
             </div>
         </div>
@@ -72,5 +82,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <!-- <script src="wall.js"></script> -->
 </body>
 </html>
