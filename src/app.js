@@ -65,18 +65,24 @@ function messageForUser(user) {
     var user = user;
     const contenido = document.getElementById('contenido');
     if (user.emailVerified) {
-        contenido.innerHTML = `
-    <div class="container mt-5" id="root">
-        <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
-        <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
-        <hr>
-        <p class="mb-0">FEMINISM IS FOR EVERYONE</p>
-        </div>
-        <button class="btn btn-danger" id="cerrar" onclick="cerrar()">Cerrar Sesion</button>
-    </div>
-    `;
+        const button = document.getElementById('iniciar');
+        button.addEventListener('click', e => {
+            console.log(e.target);
+            window.location.href = 'wall.html';
+        })
     }
+    //     contenido.innerHTML = `
+    // <div class="container mt-5" id="root">
+    //     <div class="alert alert-success" role="alert">
+    //     <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
+    //     <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
+    //     <hr>
+    //     <p class="mb-0">FEMINISM IS FOR EVERYONE</p>
+    //     </div>
+    //     <button class="btn btn-danger" id="cerrar" onclick="cerrar()">Cerrar Sesion</button>
+    // </div>
+    // `;
+    
 }
 
 function cerrar() {
@@ -105,7 +111,9 @@ $('#facebook').click(function(){
   firebase.auth()
     .signInWithPopup(providerfb)
     .then(function(result) {
-      guardarDatos(result.user);
+    window.location = 'wall.html' //Url aqui
+    }).catch(error => {
+    console.error(error);
     });
 });
 
@@ -114,14 +122,22 @@ $('#gmail').click(function(){
     firebase.auth()
     .signInWithPopup(provider)
     .then(function (result) {
-    console.log(result.user);
-    $('#gmail').hide();
-    $('#contenido').append("<img src='"+result.user.photoURL+"' />")
+    window.location = 'wall.html' //Url aqui
+    }).catch(error => {
+    console.error(error);
+    // console.log(result.user);
+    // // $('#gmail').hide();
+    // $('#contenido').append("<img src='"+result.user.photoURL+"' />")
     });
 });
 
-//>----------------------------------
+//mostrar u ocultar inicio de sesión y registro
 $('#register').click(function(){
     $('#register-form').show();
     $('#form-signin').hide();
-})
+  })
+  
+  $('#goLogin').click(function(){
+    $('#form-signin').show();
+    $('#register-form').hide();
+  })

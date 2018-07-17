@@ -88,3 +88,4 @@ function editar(id, nombre) {
       });
   }
 }
+
