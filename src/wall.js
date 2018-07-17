@@ -18,7 +18,7 @@ function guardar() {
       first: nombre,
     })
       .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
+        
         document.getElementById('nombre').value = '';
       })
       .catch(function (error) {
@@ -35,7 +35,7 @@ const tabla = document.getElementById('tabla');
 db.collection("users").onSnapshot((querySnapshot) => {
   tabla.innerHTML = '';
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().first}`);
+    
     tabla.innerHTML += `
       <div> 
         <textarea disabled>${doc.data().first}</textarea>
@@ -47,7 +47,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
           <button class="dropdown-item btn-sm" type="button"  onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
           <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
         </div>
-        <button type="button"><i class="fas fa-heart"></i> Like</button>
+        <button type="button" onclick= "contador()"><i class="fas fa-heart" id="likes"></i> Like</button>
       </div>
       `
   });
@@ -56,7 +56,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
 //Borrar documentos
 function eliminar(id) {
   db.collection("users").doc(id).delete().then(function () {
-    console.log("Document successfully deleted!");
+    
   }).catch(function (error) {
     console.error("Error removing document: ", error);
   });
@@ -77,10 +77,8 @@ function editar(id, nombre) {
       first: nombre,
     })
       .then(function () {
-        console.log("Document successfully updated!");
         boton.innerHTML = 'Publicar';
         document.getElementById('nombre').value = '';
-
       })
       .catch(function (error) {
         // The document probably doesn't exist.
@@ -88,4 +86,10 @@ function editar(id, nombre) {
       });
   }
 }
-
+ //Contar los likes
+function contador() {
+  const likes = document.getElementById('likes')
+  likes.addEventListener('click', (event)=>{
+    console.log(event.target);
+  })
+}
