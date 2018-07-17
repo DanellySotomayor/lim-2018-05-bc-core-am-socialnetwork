@@ -89,4 +89,3 @@ function editar(id, nombre) {
   }
 }
 
-//contar like
