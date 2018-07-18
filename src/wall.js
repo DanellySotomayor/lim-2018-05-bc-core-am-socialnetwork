@@ -47,7 +47,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
           <button class="dropdown-item btn-sm" type="button"  onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
           <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
         </div>
-        <button type="button" onclick= "contador()"><i class="fas fa-heart"></i> Like</button>
+        <button type="button" onclick= "contador()" id="likes"><i class="fas fa-heart"></i> Like</button>
       </div>
       `
   });
@@ -89,6 +89,21 @@ function editar(id, nombre) {
   }
 }
  //Contar los likes
+
 function contador() {
-  console.log(event.target.value);
+
+  const likes = document.getElementById('likes')
+  console.log(likes);
+  debugger
+  likes.addEventListener('click',(event)=>{
+    let cont = 0;
+    if (event.target === 1 ) {
+      cont++
+    } else if (event.target !== 1) {
+      cont--
+    }
+    console.log(cont);
+    return cont;
+  })
+
 }
