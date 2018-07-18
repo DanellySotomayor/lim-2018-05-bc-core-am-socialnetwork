@@ -38,7 +38,8 @@ db.collection("users").onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     tabla.innerHTML += `
       <div> 
-        <textarea disabled>${doc.data().first}</textarea>
+      <br><br>
+      <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <i class="fas fa-ellipsis-h"></i>
