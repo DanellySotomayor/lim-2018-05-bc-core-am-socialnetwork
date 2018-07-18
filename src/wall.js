@@ -98,10 +98,10 @@ function contador() {
   debugger
   likes.addEventListener('click',(event)=>{
     let cont = 0;
-    if (event.target === 1 ) {
-      cont++
-    } else if (event.target !== 1) {
+    if (event.target !== 1 ) {
       cont--
+    } else if (event.target === 1) {
+      cont++
     }
     console.log(cont);
     return cont;
