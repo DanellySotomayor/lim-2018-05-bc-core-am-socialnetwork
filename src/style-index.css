@@ -119,13 +119,19 @@ img {
 
 @media (max-width: 700px) {
     header {
-        font-size: 25px;
-        padding: 15px;
+    font-size: 25px;
+    display: block;
     }
 
   .form-signin {
     width: 100%;
     display: block;
+  }
+
+  .register {
+    width: 100%;
+    display: none;
+    
   }
  
   .normas {
