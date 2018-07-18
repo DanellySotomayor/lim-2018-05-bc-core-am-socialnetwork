@@ -170,3 +170,19 @@ img {
     width: 25px;
     border-radius: 5px;
 }
+
+.caja-post {
+font-family: Century,sans-serif;
+color: #303030;
+font-size: 18px;
+font-weight: 400;
+text-align: left;
+background: #bcc8e8;
+margin: 0 0 15px;
+overflow: hidden;
+padding: 20px;
+border-radius: 25px 0px 25px 0px;
+-moz-border-radius: 25px 0px 25px 0px;
+-webkit-border-radius: 25px 0px 25px 0px;
+border: 1px solid #b9c2dc;
+    }
