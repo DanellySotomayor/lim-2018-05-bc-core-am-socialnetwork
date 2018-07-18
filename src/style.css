@@ -131,7 +131,6 @@ img {
   .register {
     width: 100%;
     display: none;
-    
   }
  
   .normas {
@@ -149,7 +148,7 @@ img {
     font-weight: 400;
     text-align: left;
     background: #bcc8e8;
-    margin: 0 0 15px;
+    margin: 5px 70px;
     overflow: hidden;
     padding: 20px;
     border-radius: 25px 0px 25px 0px;
@@ -157,3 +156,11 @@ img {
     -webkit-border-radius: 25px 0px 25px 0px;
     border: 1px solid #b9c2dc;
 }
+
+#dropdownMenu2{
+    margin-left: 70px;
+}
+
+/* .dropdown-menu {
+    margin-top: 10px;
+} */
