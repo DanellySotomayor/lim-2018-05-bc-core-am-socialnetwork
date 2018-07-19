@@ -54,8 +54,8 @@ function observer() {
         } else {
             // User is signed out.
             console.log("No existe usuario activo")
-            contenido.innerHTML = `
-            `;
+            // contenido.innerHTML = `
+            // `;
         }
     });
 }
@@ -64,7 +64,7 @@ observer();
 //Mensaje para usuario activo
 function messageForUser(user) {
     var user = user;
-    const contenido = document.getElementById('contenido');
+    // const contenido = document.getElementById('contenido');
     if (user.emailVerified) {
         const button = document.getElementById('iniciar');
         button.addEventListener('click', e => {
@@ -84,16 +84,6 @@ function messageForUser(user) {
     // </div>
     // `;
     
-}
-
-function cerrar() {
-    firebase.auth().signOut()
-        .then(function () {
-            console.log('Saliendo...');
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
 }
 
 function verify() {

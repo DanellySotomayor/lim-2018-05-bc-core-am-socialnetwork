@@ -10,7 +10,8 @@ const db = firebase.firestore();
 
 //Agregar documentos
 function guardar() {
-
+ console.log('crearrrr');
+ 
   if (nombre.value !== '') {
     let nombre = document.getElementById('nombre').value;
 
@@ -56,15 +57,21 @@ db.collection("users").onSnapshot((querySnapshot) => {
 
 //Borrar documentos
 function eliminar(id) {
+  console.log('elimando' , id);
+  
   db.collection("users").doc(id).delete().then(function () {
     
   }).catch(function (error) {
     console.error("Error removing document: ", error);
   });
+
+  const boton = document.getElementById('boton');
+  boton.onclick = guardar
 }
 
 //Editar documentos
 function editar(id, nombre) {
+  console.log('editando', id)
   document.getElementById('nombre').value = nombre;
 
   const boton = document.getElementById('boton');
@@ -81,6 +88,7 @@ function editar(id, nombre) {
        
         boton.innerHTML = 'Publicar';
         document.getElementById('nombre').value = '';
+        boton.onclick = guardar
 
       })
       .catch(function (error) {
@@ -92,10 +100,8 @@ function editar(id, nombre) {
  //Contar los likes
 
 function contador() {
-
   const likes = document.getElementById('likes')
   console.log(likes);
-  debugger
   likes.addEventListener('click',(event)=>{
     let cont = 0;
     if (event.target !== 1 ) {
@@ -107,4 +113,16 @@ function contador() {
     return cont;
   })
 
+}
+
+//cerrar sesion
+function cerrar() {
+  firebase.auth().signOut()
+      .then(function () {
+          console.log('Saliendo...');
+          window.location.href = 'index.html';
+      })
+      .catch(function (error) {
+          console.log(error);
+      })
 }
