@@ -131,12 +131,16 @@ btnFacebook.addEventListener('click', () => {
 
 //mostrar u ocultar inicio de sesión y registro
 crear.addEventListener('click', () => {
-  $('#register-form').show();
-  $('#form-signin').hide();
+  document.getElementById('register-form').style.display = 'block';
+  document.getElementById('form-signin').style.display = 'none';
 })
 inicioSesion.addEventListener('click', () => {
-  $('#form-signin').show();
-  $('#register-form').hide();
+  document.getElementById('form-signin').style.display = 'block';
+  document.getElementById('register-form').style.display = 'none';
+})
+
+closeModal.addEventListener('click', () => {
+  document.getElementById('exampleModal').style.display = 'none';
 })
 
 //data de users realtime
