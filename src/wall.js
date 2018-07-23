@@ -97,23 +97,6 @@ function editar(id, nombre) {
       });
   }
 }
- //Contar los likes
-
-function contador() {
-  const likes = document.getElementById('likes')
-  console.log(likes);
-  likes.addEventListener('click',(event)=>{
-    let cont = 0;
-    if (event.target !== 1 ) {
-      cont--
-    } else if (event.target === 1) {
-      cont++
-    }
-    console.log(cont);
-    return cont;
-  })
-
-}
 
 //cerrar sesion
 function cerrar() {
