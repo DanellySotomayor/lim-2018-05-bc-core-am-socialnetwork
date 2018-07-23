@@ -1,4 +1,5 @@
 const btnPublicar = document.getElementById('btnPublicar');
+const post = document.getElementById('post').value;
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
   apiKey: "AIzaSyDBi3SO4pgUpX4urYoutax2V5NINLab8go",

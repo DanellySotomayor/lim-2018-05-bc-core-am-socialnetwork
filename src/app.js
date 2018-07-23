@@ -67,12 +67,12 @@ const observer = () => {
   });
 }
 observer();
+
 //Mensaje para usuario activo
 const messageForUser = (user) => {
   var user = user;
   // const contenido = document.getElementById('contenido');
   if (user.emailVerified) {
-
     login.addEventListener('click', event => {
       console.log(event.target);
       window.location.href = 'wall.html';
@@ -81,7 +81,7 @@ const messageForUser = (user) => {
   //     contenido.innerHTML = `
   // <div class="container mt-5" id="root">
   //     <div class="alert alert-success" role="alert">
-  //     <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
+  // <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
   //     <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
   //     <hr>
   //     <p class="mb-0">FEMINISM IS FOR EVERYONE</p>
@@ -92,7 +92,7 @@ const messageForUser = (user) => {
 
 }
 const verify = () => {
-   user = firebase.auth().currentUser;
+  user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {
     console.log("Enviando correo.....")
     // Email sent.
@@ -104,33 +104,46 @@ const verify = () => {
 
 btnGoogle.addEventListener('click', () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth()
-    .signInWithPopup(provider)
-    .then(function (result) {
-      window.location = 'wall.html' //Url aqui
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      console.log(result);
+      const user = result.user;
+      console.log(user);
+      
+      writeUserData(user.uid, user.displayName, user.email, user.photoURL)
+      // window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
 
     });
 })
 
-btnFacebook.addEventListener('click' , () => {
+btnFacebook.addEventListener('click', () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
   firebase.auth()
-  .signInWithPopup(providerfb)
-  .then((result) => {
-    window.location = 'wall.html' //Url aqui
-  }).catch(error => {
-    console.error(error);
-  });
+    .signInWithPopup(providerfb)
+    .then((result) => {
+      window.location = 'wall.html' //Url aqui
+    }).catch(error => {
+      console.error(error);
+    });
 })
 
 //mostrar u ocultar inicio de sesión y registro
-crear.addEventListener('click' ,() => {
+crear.addEventListener('click', () => {
   $('#register-form').show();
   $('#form-signin').hide();
 })
-inicioSesion.addEventListener('click' , () => {
+inicioSesion.addEventListener('click', () => {
   $('#form-signin').show();
   $('#register-form').hide();
 })
+
+//data de users realtime
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  });
+}
