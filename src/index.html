@@ -7,6 +7,62 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<body>
+<header>
+    <div>U+Us El feminismo es para todxs</div>
+</header>
+<div class="container-fluid ">
+    <div class="row">
+     <div class="form-signin" id="form-signin">
+        <img class="logo-uss" src="../src/img/uss.png"></img>
+        <p class="font-weight-light">Para ti y nosotrxs. Nuestro espacio.</p>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input id="email2" type="email" placeholder="Email" class="form-control">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input id="password2" type="password" placeholder="Contraseña" class=" form-control">
+        <button class="btn btn-success" id="iniciar">Iniciar sesión</button>
+        <button class="btn btn-success" id="register2">Crear una cuenta</button>
+        <br><br>
+        <p style="color: #ffffff">O ingresa con:</p>
+        <button type="button" class="icon-facebook ml-2" id="facebook"><img src="../src/img/logofacebook.png"/></button>
+        <button type="button" class="icon-google ml-2" id="gmail"><img src="../src/img/logogmail.png"/></button>
+        <br><br>
+        <p><a href="home.html" style="color: #ffffff">Llévame directamente</a></p>
+     </div>  
+    </div>
+
+    <div class="register" id="register-form">
+                <div class="row">
+                    <h5 class="h3 mb-3 font-weight-normal">¿Quieres unirte a la red? ¡Regístrate aquí!</h5>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required="true" class="form-control">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true"  class="form-control">
+                    <br><br>
+                    <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="register">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->    
+    <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>    
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">¡Bienvenidx!</h5>
+                    <button type="button" class="close" id="closeRegister" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="goLogin">Ir a inicio de sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <body>
     <label for="inputEmail" class="sr-only">Email address</label>
