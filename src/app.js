@@ -57,6 +57,7 @@ const observer = () => {
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
+      localStorage.setItem('userUID' , user.uid);
       var providerData = user.providerData;
     } else {
       // User is signed out.
@@ -109,9 +110,7 @@ btnGoogle.addEventListener('click', () => {
       console.log(result);
       const user = result.user;
       console.log(user);
-      
-      writeUserData(user.uid, user.displayName, user.email, user.photoURL)
-      // window.location = 'wall.html' //Url aqui
+     window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
 
@@ -138,12 +137,3 @@ inicioSesion.addEventListener('click', () => {
   $('#form-signin').show();
   $('#register-form').hide();
 })
-
-//data de users realtime
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture: imageUrl
-  });
-}

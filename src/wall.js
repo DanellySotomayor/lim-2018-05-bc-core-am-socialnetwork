@@ -36,6 +36,7 @@ const guardar = () => {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
+      uidUser : localStorage.getItem('userUID')
     })
       .then((docRef) => { 
         document.getElementById('post').value = '';
@@ -114,6 +115,7 @@ const cerrar = () => {
   firebase.auth().signOut()
       .then(() => {
           console.log('Saliendo...');
+          localStorage.removeItem('userUID')
           window.location.href = 'index.html';
       })
       .catch((error) => {
