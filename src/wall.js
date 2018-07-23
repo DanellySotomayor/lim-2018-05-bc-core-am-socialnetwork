@@ -1,3 +1,4 @@
+const btnPublicar = document.getElementById('btnPublicar');
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
   apiKey: "AIzaSyDBi3SO4pgUpX4urYoutax2V5NINLab8go",
@@ -9,26 +10,42 @@ firebase.initializeApp({
 const db = firebase.firestore();
 
 //Agregar documentos
-function guardar() {
- console.log('crearrrr');
+// btnPublicar.addEventListener('click' , () => {
+//   console.log('crearrrr');
  
-  if (nombre.value !== '') {
-    let nombre = document.getElementById('nombre').value;
+//   if (post.value !== '') {
+//     let post = document.getElementById('post').value;
 
-    db.collection("users").add({
-      first: nombre,
-    })
-      .then(function (docRef) {
+//     db.collection("users").add({
+//       first: post,
+//     })
+//       .then(function (docRef) {
         
-        document.getElementById('nombre').value = '';
+//         document.getElementById('post').value = '';
+//       })
+//       .catch(function (error) {
+//         console.error("Error adding document: ", error);
+//       });
+//   } else {
+//     alert('Se olvido de escribir un Post')
+//   }
+// })
+const guardar = () => {
+ console.log('crearrrr');
+  if (post.value !== '') {
+    let post = document.getElementById('post').value;
+    db.collection("users").add({
+      first: post,
+    })
+      .then((docRef) => { 
+        document.getElementById('post').value = '';
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error("Error adding document: ", error);
       });
   } else {
     alert('Se olvido de escribir un Post')
   }
-
 }
 
 //Leer documentos
@@ -56,42 +73,36 @@ db.collection("users").onSnapshot((querySnapshot) => {
 });
 
 //Borrar documentos
-function eliminar(id) {
+const eliminar = (id) => {
   console.log('elimando' , id);
-  
-  db.collection("users").doc(id).delete().then(function () {
-    
-  }).catch(function (error) {
+  db.collection("users").doc(id).delete().then(() => {   
+  }).catch((error) => {
     console.error("Error removing document: ", error);
   });
-
-  const boton = document.getElementById('boton');
+  const boton = document.getElementById('btnPublicar');
   boton.onclick = guardar
 }
 
 //Editar documentos
-function editar(id, nombre) {
+const editar = (id, post) => {
   console.log('editando', id)
-  document.getElementById('nombre').value = nombre;
-
-  const boton = document.getElementById('boton');
+  document.getElementById('post').value = post;
+  const boton = document.getElementById('btnPublicar');
   boton.innerHTML = 'Guardar';
-  boton.onclick = function () {
+  boton.onclick = () => {
     const usersRef = db.collection("users").doc(id);
     // Set the "capital" field of the city 'DC'
-    let nombre = document.getElementById('nombre').value;
+    let post = document.getElementById('post').value;
 
     return usersRef.update({
-      first: nombre,
+      first: post,
     })
-      .then(function () {
-       
+      .then(() => {
         boton.innerHTML = 'Publicar';
-        document.getElementById('nombre').value = '';
+        document.getElementById('post').value = '';
         boton.onclick = guardar
-
       })
-      .catch(function (error) {
+      .catch((error) => {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
       });
@@ -99,13 +110,13 @@ function editar(id, nombre) {
 }
 
 //cerrar sesion
-function cerrar() {
+const cerrar = () => {
   firebase.auth().signOut()
-      .then(function () {
+      .then(() => {
           console.log('Saliendo...');
           window.location.href = 'index.html';
       })
-      .catch(function (error) {
+      .catch((error) => {
           console.log(error);
       })
 }
