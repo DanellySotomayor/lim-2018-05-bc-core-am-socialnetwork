@@ -4,6 +4,7 @@ const register = document.getElementById('register');
 const login = document.getElementById('iniciar');
 const btnFacebook = document.getElementById('facebook');
 const btnGoogle = document.getElementById('gmail');
+const closeModal = document.getElementById('close-register');
 
 //Función para registrar
 register.addEventListener('click', () => {
@@ -130,10 +131,24 @@ btnFacebook.addEventListener('click', () => {
 
 //mostrar u ocultar inicio de sesión y registro
 crear.addEventListener('click', () => {
-  $('#register-form').show();
-  $('#form-signin').hide();
+  document.getElementById('register-form').style.display = 'block';
+  document.getElementById('form-signin').style.display = 'none';
 })
 inicioSesion.addEventListener('click', () => {
-  $('#form-signin').show();
-  $('#register-form').hide();
+  document.getElementById('form-signin').style.display = 'block';
+  document.getElementById('register-form').style.display = 'none';
 })
+
+closeModal.addEventListener('click', () => {
+  document.getElementById('exampleModal').style.display = 'none';
+})
+
+//data de users realtime
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  });
+}
+
