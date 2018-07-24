@@ -44,6 +44,7 @@ login.addEventListener('click', () => {
 const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      console.log(user);
       console.log("Si existe usuario activo")
       messageForUser(user);
       // User is signed in. "user es un objeto"
@@ -54,7 +55,9 @@ const observer = () => {
       console.log("******************");
 
       var emailVerified = user.emailVerified;
+      //localStorage.setItem('userUID' , user.uid);
       var photoURL = user.photoURL;
+      //localStorage.setItem('userUID' , user.uid);
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       localStorage.setItem('userUID' , user.uid);
