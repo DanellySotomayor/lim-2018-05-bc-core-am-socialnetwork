@@ -5,6 +5,7 @@ const login = document.getElementById('iniciar');
 const btnFacebook = document.getElementById('facebook');
 const btnGoogle = document.getElementById('gmail');
 const closeModal = document.getElementById('close-register');
+const recoverPassword = document.getElementById('forgot-password');
 
 //Función para registrar
 register.addEventListener('click', () => {
@@ -139,9 +140,9 @@ inicioSesion.addEventListener('click', () => {
   document.getElementById('register-form').style.display = 'none';
 })
 
-closeModal.addEventListener('click', () => {
-  document.getElementById('exampleModal').style.display = 'none';
-})
+// closeModal.addEventListener('click', () => {
+//   document.getElementById('exampleModal').style.display = 'none';
+// })
 
 //data de users realtime
 function writeUserData(userId, name, email, imageUrl) {
@@ -152,3 +153,14 @@ function writeUserData(userId, name, email, imageUrl) {
   });
 }
 
+recoverPassword.addEventListener('click', () => {
+	let auth = firebase.auth();
+	let emailAddress = document.getElementById('email2').value;
+
+	auth.sendPasswordResetEmail(emailAddress)
+		.then(function () {
+			alert('Se ha enviado un correo a su cuenta. Por favor, sigue los pasos indicados.');
+		}, function (error) {
+		console.log(error)
+		})
+})
