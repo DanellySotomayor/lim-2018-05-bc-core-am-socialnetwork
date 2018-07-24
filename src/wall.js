@@ -130,37 +130,33 @@ const cerrar = () => {
 
 //Mostrar el perfil de usuario
 const mostrarPerfil = () => {
-  // if (localStorage.getItem('photo') === null && localStorage.getItem('nombre') === null) {
+   if (localStorage.getItem('photo') === 'null'  && localStorage.getItem('nombre') === 'null') {
     perfil.innerHTML += `
     <h3><abbr title="attribute">Mi Perfil</abbr></h3>
     <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
     <br>
     <div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
+        <li class="list-group-item list-group-item-secondary">Usuarix <i class="far fa-laugh-beam"></i> </li>
+        <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
+      </ul>
+    </div>
+  `  
+ } else{ 
+    perfil.innerHTML += `
+    <h3><abbr title="attribute">Mi Perfil</abbr></h3>
+    <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
+    <br>
+    <div>
+      <ul class="list-group list-group-flush">
+         <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
         <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
       </ul>
     </div>
   `
-  console.log(typeof(localStorage.getItem('photo')));
-  
-  // } //else{
-  //   perfil.innerHTML += `
-  //   <h3><abbr title="attribute">Mi Perfil</abbr></h3>
-  //   <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
-  //   <br>
-  //   <div>
-  //     <ul class="list-group list-group-flush">
-  //       Usuarix <i class="far fa-laugh-beam"></i>  <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
-  //       <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
-  //     </ul>
-  //   </div>
-  // `
-//  }
+ }
 }
 mostrarPerfil()
-
-
 
 
 
