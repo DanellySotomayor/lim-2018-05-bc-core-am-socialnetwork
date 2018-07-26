@@ -1,16 +1,8 @@
 {
   "env": {
-    "browser": true,
-    "node": true,
-    "mocha": true,
-    "jquery":true
+    "browser": true
   },
   "parserOptions": {
     "ecmaVersion": 6
-  },
-  "extends": "eslint:recommended",
-  "globals": {
-    "assert": false,
-    "dataLogin": false
   }
 }
