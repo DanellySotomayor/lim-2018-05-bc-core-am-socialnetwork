@@ -24,25 +24,34 @@
 </head>
 
 <body>
+
   <header>U+Us El feminismo es para todxs</header>
+
   <div>
     <a href="#" class="list-group-item list-group-item-action list-group-item-primary">
       <i class="fas fa-user"></i> Perfil</a>
     <a href="home.html" class="list-group-item list-group-item-action list-group-item-secondary">
       <i class="fas fa-home"></i> Inicio</a>
-    <button onclick="cerrar()"><i class="fas fa-ellipsis-v"></i> Cerrar Sesion</button>
+    <button onclick="cerrar()">
+      <i class="fas fa-ellipsis-v"></i> Cerrar Sesion</button>
   </div>
+
+  <section id="perfil">
+  </section>
+
   <div class='container'>
-    <br><br>
-      <input class="form-control form-control-lg" type="text" placeholder="¿Qué estás pensando?" id="post">
-      <br>
-      <button class="btn btn-info" id='btnPublicar' onclick="guardar()">Publicar</button>
-    </div>
+    <br>
+    <br>
+    <input class="form-control form-control-lg" type="text" placeholder="¿Qué estás pensando?" id="post">
+    <br>
+    <button class="btn btn-info" id='btnPublicar' onclick="guardar()">Publicar</button>
+  </div>
 
-    <div id="tabla">
-    </div>
+  <div id="tabla">
+  </div>
 
   </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -52,6 +61,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="wall.js"></script>
-  
+
 </body>
+
 </html>

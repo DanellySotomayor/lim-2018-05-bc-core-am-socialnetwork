@@ -41,31 +41,25 @@ login.addEventListener('click', () => {
     });
 })
 
-
 //Observador valida si el usuario está activo o no
 const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log("Si existe usuario activo")
-      messageForUser(user);
-      // User is signed in. "user es un objeto"
-      var displayName = user.displayName;
-      var email = user.email;
+      console.log(user);
+      
       console.log("******************");
       console.log(user.emailVerified);
       console.log("******************");
-
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
+      console.log("Si existe usuario activo")
+      messageForUser(user);
+      //  User is signed in. "user es un objeto"
+      localStorage.setItem('nombre' , user.displayName);
+      localStorage.setItem('email' , user.email);
+      localStorage.setItem('photo' , user.photoURL);
       localStorage.setItem('userUID' , user.uid);
-      var providerData = user.providerData;
     } else {
       // User is signed out.
       console.log("No existe usuario activo")
-      // contenido.innerHTML = `
-      // `;
     }
   });
 }
@@ -81,18 +75,6 @@ const messageForUser = (user) => {
       window.location.href = 'wall.html';
     })
   }
-  //     contenido.innerHTML = `
-  // <div class="container mt-5" id="root">
-  //     <div class="alert alert-success" role="alert">
-  // <h4 class="alert-heading">Bienvenid@! ${user.email}</h4>
-  //     <p>En esta red social podrás conocer a más feministas como tú, podrás asesorarte, brindar y recibir apoyo de la comunidad en tu país.</p>
-  //     <hr>
-  //     <p class="mb-0">FEMINISM IS FOR EVERYONE</p>
-  //     </div>
-  //     <login class="btn btn-danger" id="cerrar" onclick="cerrar()">Cerrar Sesion</login>
-  // </div>
-  // `;
-
 }
 const verify = () => {
   user = firebase.auth().currentUser;
@@ -109,9 +91,7 @@ btnGoogle.addEventListener('click', () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
-      console.log(result);
       const user = result.user;
-      console.log(user);
      window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
@@ -121,9 +101,9 @@ btnGoogle.addEventListener('click', () => {
 
 btnFacebook.addEventListener('click', () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
-  firebase.auth()
-    .signInWithPopup(providerfb)
+  firebase.auth().signInWithPopup(providerfb)
     .then((result) => {
+      console.log(result);
       window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
@@ -144,14 +124,6 @@ inicioSesion.addEventListener('click', () => {
 //   document.getElementById('exampleModal').style.display = 'none';
 // })
 
-//data de users realtime
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture: imageUrl
-  });
-}
 
 recoverPassword.addEventListener('click', () => {
 	let auth = firebase.auth();
