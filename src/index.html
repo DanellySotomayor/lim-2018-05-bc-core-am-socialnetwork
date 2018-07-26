@@ -61,13 +61,14 @@
         <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true" class="form-control">
         <br>
         <br>
-        <button type="button" class="btn btn-success" data-toggle='modal' data-target='#exampleModal' id="register">Guardar</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="register">Guardar</button>
       </div>
     </div>
   </div>
+  </div>
 
   <!-- Modal -->
-  <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -84,6 +85,14 @@
         </div>
       </div>
     </div>
+    <div class="modal-body">
+      <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" id="goLogin">Ir a inicio de sesión</button>
+    </div>
+  </div>
+  </div>
   </div>
 
   <div class="normas">
@@ -93,7 +102,6 @@
     <p>- Los insultos, mensajes de odio e intolerancia serán borrados inmediatamente y el usuario eliminado de la plataforma.</p>
     <p>- La información privada, denuncias, testimonios o conversaciones no pueden llevarse a otros espacios o plataformas sin
       autorización. Queremos que este sea un lugar seguro para todxs.</p>
-  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -105,5 +113,4 @@
   <script src="app.js"></script>
   <!-- <script src="wall.js"></script> -->
 </body>
-
 </html>

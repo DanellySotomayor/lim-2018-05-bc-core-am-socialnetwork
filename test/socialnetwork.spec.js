@@ -1,16 +1,8 @@
-describe('login', () => {
-  it('debería ser una función', () => {
-    assert.equal(typeof login, 'function');
-  });
+describe("data", () => {
 
-  it('debería ser una función', () => {
-    assert.equal(typeof register, 'function');
+  // function register
+  it("writeUserData debe función", () => {
+    assert.isFunction(writeUserData);
   });
-
-  it('debería ser una función', () => {
-    assert.equal(typeof observer, 'function');
-  });
-
 
 });
-

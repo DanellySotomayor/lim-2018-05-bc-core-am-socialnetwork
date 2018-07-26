@@ -18,11 +18,8 @@ register.addEventListener('click', () => {
     })
     .catch((error) => {
       // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      alert
+      var errorCode = error.code;
+      var errorMessage = error.message;
     });
 })
 
@@ -34,10 +31,8 @@ login.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email2, password2)
     .catch((error) => {
       // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
+      var errorCode = error.code;
+      var errorMessage = error.message;
     });
 })
 
@@ -94,7 +89,6 @@ btnGoogle.addEventListener('click', () => {
      window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
-
     });
 })
 

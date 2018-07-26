@@ -143,3 +143,7 @@ const contador = () => {
   console.log(btnLike , numLikes)
 }
 contador()
+let cont = 0;
+if (event.target) {
+  cont++
+}
