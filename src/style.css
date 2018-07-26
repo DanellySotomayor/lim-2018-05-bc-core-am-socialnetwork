@@ -164,3 +164,10 @@ img {
 /* .dropdown-menu {
     margin-top: 10px;
 } */
+
+#perfil {
+    border: #303030 solid;
+    background: #ffffff;
+    width: 70%;
+    height: auto;
+}

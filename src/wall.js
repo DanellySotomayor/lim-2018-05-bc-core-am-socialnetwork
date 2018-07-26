@@ -1,5 +1,7 @@
 const btnPublicar = document.getElementById('btnPublicar');
 const post = document.getElementById('post').value;
+const perfil = document.getElementById('perfil')
+
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
   apiKey: "AIzaSyDBi3SO4pgUpX4urYoutax2V5NINLab8go",
@@ -31,14 +33,14 @@ const db = firebase.firestore();
 // })
 
 const guardar = () => {
- console.log('crearrrr');
+  console.log('crearrrr');
   if (post.value !== '') {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
-      uidUser : localStorage.getItem('userUID')
+      uidUser: localStorage.getItem('userUID')
     })
-      .then((docRef) => { 
+      .then((docRef) => {
         document.getElementById('post').value = '';
       })
       .catch((error) => {
@@ -54,10 +56,11 @@ const tabla = document.getElementById('tabla');
 db.collection("users").onSnapshot((querySnapshot) => {
   tabla.innerHTML = '';
   querySnapshot.forEach((doc) => {
-    
+
     tabla.innerHTML += `
       <div> 
-      <br><br>
+      <br>
+      <p>${localStorage.getItem('email')}</p>
       <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
@@ -74,8 +77,8 @@ db.collection("users").onSnapshot((querySnapshot) => {
 
 //Borrar documentos
 const eliminar = (id) => {
-  console.log('elimando' , id);
-  db.collection("users").doc(id).delete().then(() => {   
+  console.log('elimando', id);
+  db.collection("users").doc(id).delete().then(() => {
   }).catch((error) => {
     console.error("Error removing document: ", error);
   });
@@ -112,12 +115,48 @@ const editar = (id, post) => {
 //cerrar sesion
 const cerrar = () => {
   firebase.auth().signOut()
-      .then(() => {
-          console.log('Saliendo...');
-          localStorage.removeItem('userUID')
-          window.location.href = 'index.html';
-      })
-      .catch((error) => {
-          console.log(error);
-      })
+    .then(() => {
+      console.log('Saliendo...');
+      localStorage.removeItem('userUID')
+      localStorage.removeItem('photo')
+      localStorage.removeItem('nombre')
+      localStorage.removeItem('email')
+      window.location.href = 'index.html';
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 }
+
+//Mostrar el perfil de usuario
+const mostrarPerfil = () => {
+   if (localStorage.getItem('photo') === 'null'  && localStorage.getItem('nombre') === 'null') {
+    perfil.innerHTML += `
+    <h3><abbr title="attribute">Mi Perfil</abbr></h3>
+    <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
+    <br>
+    <div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-secondary">Usuarix <i class="far fa-laugh-beam"></i> </li>
+        <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
+      </ul>
+    </div>
+  `  
+ } else{ 
+    perfil.innerHTML += `
+    <h3><abbr title="attribute">Mi Perfil</abbr></h3>
+    <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
+    <br>
+    <div>
+      <ul class="list-group list-group-flush">
+         <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
+        <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
+      </ul>
+    </div>
+  `
+ }
+}
+mostrarPerfil()
+
+
+

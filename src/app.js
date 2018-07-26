@@ -5,6 +5,7 @@ const login = document.getElementById('iniciar');
 const btnFacebook = document.getElementById('facebook');
 const btnGoogle = document.getElementById('gmail');
 const closeModal = document.getElementById('close-register');
+const recoverPassword = document.getElementById('forgot-password');
 
 //Función para registrar
 register.addEventListener('click', () => {
@@ -40,22 +41,21 @@ login.addEventListener('click', () => {
 const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      console.log(user);
+      
+      console.log("******************");
+      console.log(user.emailVerified);
+      console.log("******************");
       console.log("Si existe usuario activo")
       messageForUser(user);
-      // User is signed in. "user es un objeto"
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
+      //  User is signed in. "user es un objeto"
+      localStorage.setItem('nombre' , user.displayName);
+      localStorage.setItem('email' , user.email);
+      localStorage.setItem('photo' , user.photoURL);
       localStorage.setItem('userUID' , user.uid);
-      var providerData = user.providerData;
     } else {
       // User is signed out.
       console.log("No existe usuario activo")
-      // contenido.innerHTML = `
-      // `;
     }
   });
 }
@@ -71,7 +71,6 @@ const messageForUser = (user) => {
       window.location.href = 'wall.html';
     })
   }
-
 }
 const verify = () => {
   user = firebase.auth().currentUser;
@@ -97,9 +96,9 @@ btnGoogle.addEventListener('click', () => {
 
 btnFacebook.addEventListener('click', () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
-  firebase.auth()
-    .signInWithPopup(providerfb)
+  firebase.auth().signInWithPopup(providerfb)
     .then((result) => {
+      console.log(result);
       window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
@@ -116,16 +115,19 @@ inicioSesion.addEventListener('click', () => {
   document.getElementById('register-form').style.display = 'none';
 })
 
-closeModal.addEventListener('click', () => {
-  document.getElementById('exampleModal').style.display = 'none';
+// closeModal.addEventListener('click', () => {
+//   document.getElementById('exampleModal').style.display = 'none';
+// })
+
+
+recoverPassword.addEventListener('click', () => {
+	let auth = firebase.auth();
+	let emailAddress = document.getElementById('email2').value;
+
+	auth.sendPasswordResetEmail(emailAddress)
+		.then(function () {
+			alert('Se ha enviado un correo a su cuenta. Por favor, sigue los pasos indicados.');
+		}, function (error) {
+		console.log(error)
+		})
 })
-
-//data de users realtime
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture: imageUrl
-  });
-}
-
