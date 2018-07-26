@@ -44,12 +44,12 @@ const guardar = () => {
 
 //Leer documentos
 const postPrivado = () => {
-const tabla = document.getElementById('tabla');
-db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) => {
-  let contenido = '';
-  querySnapshot.forEach((doc) => {
-    contenido += `
-    <div>
+  const tabla = document.getElementById('tabla');
+  db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) => {
+    let contenido = '';
+    querySnapshot.forEach((doc) => {
+      contenido += `
+    <div id="${doc.id}">
     <br>
     <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
@@ -57,12 +57,12 @@ db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) =
       <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
       <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
     </div>
-    <button  type="button" onclick = "incLikes('${doc.id}', ${doc.data().likes})" id="likes"><i class="fas fa-heart"></i> Like<span id="numeros"></span></button>
+    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" class="likes"><i class="fas fa-heart"></i> Like</button>
   </div>
       `
+    });
+    tabla.innerHTML = contenido
   });
-  tabla.innerHTML = contenido
-});
 }
 
 //Borrar documentos
@@ -153,11 +153,16 @@ const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
     likes: likes + 1
   }).then(() => {
-    const numLikes = document.getElementById('numeros')
-    console.log(numLikes)
-  })
+    const btnLikes = document.querySelector('#'+id+' .likes');
+    let numLike = '';
+    numLike= `
+    <span id="numeros">${likes}</span>
+    ` 
+    btnLikes.innerHTML += numLike;   
+    })
     .catch((error) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
     });
+   
 }

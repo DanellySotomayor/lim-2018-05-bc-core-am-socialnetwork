@@ -93,7 +93,7 @@ const googleLogin = () => {
     });
 }
 
-const btnFacebook = () => {
+const facebookLogin = () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(providerfb)
     .then((result) => {
