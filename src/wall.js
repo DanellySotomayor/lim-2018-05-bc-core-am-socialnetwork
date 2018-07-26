@@ -1,6 +1,8 @@
 const btnPublicar = document.getElementById('btnPublicar');
 const post = document.getElementById('post').value;
-const perfil = document.getElementById('perfil')
+const perfil = document.getElementById('perfil');
+const tabla = document.getElementById('tabla');
+
 
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
@@ -8,6 +10,7 @@ firebase.initializeApp({
   authDomain: "femme-18162.firebaseapp.com",
   projectId: "femme-18162"
 });
+
 
 // Initialize Cloud Firestore through Firebase
 const db = firebase.firestore();
@@ -19,7 +22,8 @@ const guardar = () => {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
-      uidUser: localStorage.getItem('userUID')
+      uidUser: localStorage.getItem('userUID'),
+      likes: 0
     })
       .then((docRef) => {
         document.getElementById('post').value = '';
@@ -33,11 +37,10 @@ const guardar = () => {
 }
 
 //Leer documentos
-const tabla = document.getElementById('tabla');
 db.collection("users").onSnapshot((querySnapshot) => {
-  tabla.innerHTML = '';
+  let contenido = '';
   querySnapshot.forEach((doc) => {
-    tabla.innerHTML += `
+    contenido += `
     <div>
     <br>
     <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
@@ -46,10 +49,11 @@ db.collection("users").onSnapshot((querySnapshot) => {
       <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
       <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
     </div>
-    <button  type="button" onclick = "contador()" id="likes"><i class="fas fa-heart"></i> Like<span id="numeros">123</span></button>
+    <button  type="button" onclick = "incLikes('${doc.id}', ${doc.data().likes})" id="likes"><i class="fas fa-heart"></i> Like<span id="numeros"></span></button>
   </div>
       `
   });
+  tabla.innerHTML = contenido
 });
 
 //Borrar documentos
@@ -136,14 +140,15 @@ const mostrarPerfil = () => {
 mostrarPerfil()
 
 //Contador de likes
-const contador = () => {
-  let contLike = 0;
-  if (event.target) {
-    contLike++
-  }
-  console.log(contLike)
-  return contLike;
+const incLikes = (id, likes) => {
+  db.collection("users").doc(id).update({
+    likes: likes + 1
+  }).then(() => {
+    const numLikes = document.getElementById('numeros')
+    console.log(numLikes)
+  })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+    });
 }
-
-
-
