@@ -1,14 +1,14 @@
-const inicioSesion = document.getElementById('goLogin');
-const crear = document.getElementById('register2');
-const register = document.getElementById('register');
-const login = document.getElementById('iniciar');
-const btnFacebook = document.getElementById('facebook');
-const btnGoogle = document.getElementById('gmail');
-const closeModal = document.getElementById('close-register');
-const recoverPassword = document.getElementById('forgot-password');
+const backToLoginA = document.getElementById('goLogin');
+const createAccountA = document.getElementById('createAccount');
+const registerA = document.getElementById('register');
+const loginA = document.getElementById('iniciar');
+const btnFacebookA = document.getElementById('facebook');
+const btnGoogleA = document.getElementById('gmail');
+const closeModalA = document.getElementById('close-register');
+const recoverPasswordA = document.getElementById('forgot-password');
 
 //Función para registrar
-register.addEventListener('click', () => {
+const register = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   console.log("Datos registrados correctamente");
@@ -22,10 +22,10 @@ register.addEventListener('click', () => {
       var errorMessage = error.message;
       alert
     });
-})
+}
 
 //Función para loggear
-login.addEventListener('click', () => {
+const login = () => {
   const email2 = document.getElementById('email2').value;
   const password2 = document.getElementById('password2').value;
 
@@ -35,7 +35,7 @@ login.addEventListener('click', () => {
       var errorCode = error.code;
       var errorMessage = error.message;
     });
-})
+}
 
 //Observador valida si el usuario está activo o no
 const observer = () => {
@@ -83,7 +83,8 @@ const verify = () => {
   });
 }
 
-btnGoogle.addEventListener('click', () => {
+
+const googleLogin = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
@@ -92,9 +93,9 @@ btnGoogle.addEventListener('click', () => {
     }).catch(error => {
       console.error(error);
     });
-})
+}
 
-btnFacebook.addEventListener('click', () => {
+const btnFacebook = () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(providerfb)
     .then((result) => {
@@ -103,24 +104,25 @@ btnFacebook.addEventListener('click', () => {
     }).catch(error => {
       console.error(error);
     });
-})
+}
 
 //mostrar u ocultar inicio de sesión y registro
-crear.addEventListener('click', () => {
+const createAccount = () => {
+  console.log('hola');
   document.getElementById('register-form').style.display = 'block';
   document.getElementById('form-signin').style.display = 'none';
-})
-inicioSesion.addEventListener('click', () => {
+}
+
+const backToLogin = () => {
   document.getElementById('form-signin').style.display = 'block';
   document.getElementById('register-form').style.display = 'none';
-})
+}
 
 // closeModal.addEventListener('click', () => {
 //   document.getElementById('exampleModal').style.display = 'none';
 // })
 
-
-recoverPassword.addEventListener('click', () => {
+const recoverPassword = () => {
 	let auth = firebase.auth();
 	let emailAddress = document.getElementById('email2').value;
 
@@ -130,4 +132,13 @@ recoverPassword.addEventListener('click', () => {
 		}, function (error) {
 		console.log(error)
 		})
-})
+}
+
+backToLoginA.addEventListener("click", () => backToLogin());
+createAccountA.addEventListener("click", () => createAccount()); 
+registerA.addEventListener("click", () => register());
+loginA.addEventListener("click", () => login());
+btnFacebookA.addEventListener("click", () => facebookLogin());
+btnGoogleA.addEventListener("click", () => googleLogin());
+closeModalA.addEventListener("click", () => closeModal());
+recoverPasswordA.addEventListener("click", () => recoverPassword());
