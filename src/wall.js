@@ -1,6 +1,11 @@
 const btnPublicar = document.getElementById('btnPublicar');
 const post = document.getElementById('post').value;
 const perfil = document.getElementById('perfil')
+const publico = document.getElementById('publico');
+const privado = document.getElementById('privado');
+
+publico.addEventListener("click", () => postPublico());
+privado.addEventListener("click", () => postPrivado());
 
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
@@ -18,7 +23,9 @@ const guardar = () => {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
-      uidUser: localStorage.getItem('userUID')
+      uidUser: localStorage.getItem('userUID'),
+      public: false,
+      createdAt: new Date(),
     })
       .then((docRef) => {
         document.getElementById('post').value = '';
@@ -32,8 +39,9 @@ const guardar = () => {
 }
 
 //Leer documentos
+const postPrivado = () => {
 const tabla = document.getElementById('tabla');
-db.collection("users").onSnapshot((querySnapshot) => {
+db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) => {
   tabla.innerHTML = '';
   querySnapshot.forEach((doc) => {
 
@@ -54,6 +62,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
       `
   });
 });
+}
 
 //Borrar documentos
 const eliminar = (id) => {
@@ -137,3 +146,6 @@ const mostrarPerfil = () => {
  }
 }
 mostrarPerfil()
+
+
+
