@@ -18,8 +18,8 @@ register.addEventListener('click', () => {
     })
     .catch((error) => {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
       alert
@@ -34,8 +34,8 @@ login.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email2, password2)
     .catch((error) => {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
     });
@@ -45,8 +45,7 @@ login.addEventListener('click', () => {
 const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log(user);
-      
+      console.log(user);   
       console.log("******************");
       console.log(user.emailVerified);
       console.log("******************");
@@ -120,11 +119,8 @@ inicioSesion.addEventListener('click', () => {
   document.getElementById('register-form').style.display = 'none';
 })
 
-// closeModal.addEventListener('click', () => {
-//   document.getElementById('exampleModal').style.display = 'none';
-// })
 
-
+//Recuperar contraseña
 recoverPassword.addEventListener('click', () => {
 	let auth = firebase.auth();
 	let emailAddress = document.getElementById('email2').value;

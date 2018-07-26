@@ -14,24 +14,6 @@ const db = firebase.firestore();
 
 //Agregar documentos
 
-// btnPublicar.addEventListener('click' , () => {
-//   console.log('crearrrr');
-//   if (post.value !== '') {
-//     let post = document.getElementById('post').value;
-//     db.collection("users").add({
-//       first: post,
-//     })
-//       .then(function (docRef) {      
-//         document.getElementById('post').value = '';
-//       })
-//       .catch(function (error) {
-//         console.error("Error adding document: ", error);
-//       });
-//   } else {
-//     alert('Se olvido de escribir un Post')
-//   }
-// })
-
 const guardar = () => {
   console.log('crearrrr');
   if (post.value !== '') {
@@ -56,22 +38,17 @@ const tabla = document.getElementById('tabla');
 db.collection("users").onSnapshot((querySnapshot) => {
   tabla.innerHTML = '';
   querySnapshot.forEach((doc) => {
-
     tabla.innerHTML += `
-      <div> 
-      <br>
-      <p>${localStorage.getItem('email')}</p>
-      <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        <i class="fas fa-ellipsis-h"></i>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item btn-sm" type="button"  onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
-          <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
-        </div>
-        <button type="button" onclick= "contador()" id="likes"><i class="fas fa-heart"></i> Like</button>
-      </div>
+    <div>
+    <br>
+    <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
+      <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
+    </div>
+    <button  type="button"  id="likes"><i class="fas fa-heart"></i> Like<span id="numeros">123</span></button>
+  </div>
       `
   });
 });
@@ -159,5 +136,10 @@ const mostrarPerfil = () => {
 }
 mostrarPerfil()
 
-
-
+//Contador de likes
+const contador = () => {
+  const btnLike = document.getElementById('likes');
+  const numLikes = document.getElementById('numeros');
+  console.log(btnLike , numLikes)
+}
+contador()
