@@ -1,6 +1,7 @@
 const btnPublicar = document.getElementById('btnPublicar');
 const post = document.getElementById('post').value;
-const perfil = document.getElementById('perfil')
+const perfil = document.getElementById('perfil');
+const tabla = document.getElementById('tabla');
 const publico = document.getElementById('publico');
 const privado = document.getElementById('privado');
 
@@ -14,9 +15,11 @@ firebase.initializeApp({
   projectId: "femme-18162"
 });
 
+
 // Initialize Cloud Firestore through Firebase
 const db = firebase.firestore();
 
+//Agregar documentos
 const guardar = () => {
   console.log('crearrrr');
   if (post.value !== '') {
@@ -24,6 +27,7 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
+      likes: 0,
       public: false,
       createdAt: new Date(),
     })
@@ -42,25 +46,22 @@ const guardar = () => {
 const postPrivado = () => {
 const tabla = document.getElementById('tabla');
 db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) => {
-  tabla.innerHTML = '';
+  let contenido = '';
   querySnapshot.forEach((doc) => {
-
-    tabla.innerHTML += `
-      <div> 
-      <br>
-      <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        <i class="fas fa-ellipsis-h"></i>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item btn-sm" type="button"  onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
-          <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
-        </div>
-        <button type="button" onclick= "contador()" id="likes"><i class="fas fa-heart"></i> Like</button>
-      </div>
+    contenido += `
+    <div>
+    <br>
+    <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
+      <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
+    </div>
+    <button  type="button" onclick = "incLikes('${doc.id}', ${doc.data().likes})" id="likes"><i class="fas fa-heart"></i> Like<span id="numeros"></span></button>
+  </div>
       `
   });
+  tabla.innerHTML = contenido
 });
 }
 
@@ -119,7 +120,7 @@ const cerrar = () => {
 
 //Mostrar el perfil de usuario
 const mostrarPerfil = () => {
-   if (localStorage.getItem('photo') === 'null'  && localStorage.getItem('nombre') === 'null') {
+  if (localStorage.getItem('photo') === 'null' && localStorage.getItem('nombre') === 'null') {
     perfil.innerHTML += `
     <h3><abbr title="attribute">Mi Perfil</abbr></h3>
     <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
@@ -130,8 +131,8 @@ const mostrarPerfil = () => {
         <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
       </ul>
     </div>
-  `  
- } else{ 
+  `
+  } else {
     perfil.innerHTML += `
     <h3><abbr title="attribute">Mi Perfil</abbr></h3>
     <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
@@ -143,9 +144,20 @@ const mostrarPerfil = () => {
       </ul>
     </div>
   `
- }
+  }
 }
 mostrarPerfil()
 
-
-
+//Contador de likes
+const incLikes = (id, likes) => {
+  db.collection("users").doc(id).update({
+    likes: likes + 1
+  }).then(() => {
+    const numLikes = document.getElementById('numeros')
+    console.log(numLikes)
+  })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+    });
+}

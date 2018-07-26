@@ -20,7 +20,6 @@ const register = () => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      alert
     });
 }
 
@@ -41,8 +40,7 @@ const login = () => {
 const observer = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log(user);
-      
+      console.log(user);   
       console.log("******************");
       console.log(user.emailVerified);
       console.log("******************");
