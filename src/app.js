@@ -20,8 +20,6 @@ register.addEventListener('click', () => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
       alert
     });
 })
@@ -36,8 +34,6 @@ login.addEventListener('click', () => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
     });
 })
 
@@ -95,7 +91,6 @@ btnGoogle.addEventListener('click', () => {
      window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
-
     });
 })
 
