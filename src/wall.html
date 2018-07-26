@@ -39,15 +39,20 @@
   <section id="perfil">
   </section>
 
-  <div class='container'>
+  <div class="container">
     <br>
     <br>
     <input class="form-control form-control-lg" type="text" placeholder="¿Qué estás pensando?" id="post">
     <br>
-    <button class="btn btn-info" id='btnPublicar' onclick="guardar()">Publicar</button>
-  </div>
-
-  <div id="tabla">
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <i class="fas fa-ellipsis-h"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item btn-sm" type="button" onclick="publico()">Público</button>
+      <button class="dropdown-item btn-sm" type="button" onclick="privado()">Privado</button>
+    </div>
+    <button class="btn btn-info" id="btnPublicar" onclick="guardar()">Publicar</button>
   </div>
 
   <div id="tabla">
@@ -64,4 +69,5 @@
   <script src="wall.js"></script>
 
 </body>
+
 </html>

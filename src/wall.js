@@ -13,7 +13,6 @@ firebase.initializeApp({
 const db = firebase.firestore();
 
 //Agregar documentos
-
 const guardar = () => {
   console.log('crearrrr');
   if (post.value !== '') {
@@ -47,7 +46,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
       <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
       <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
     </div>
-    <button  type="button"  id="likes"><i class="fas fa-heart"></i> Like<span id="numeros">123</span></button>
+    <button  type="button" onclick = "contador()" id="likes"><i class="fas fa-heart"></i> Like<span id="numeros">123</span></button>
   </div>
       `
   });
@@ -108,7 +107,7 @@ const cerrar = () => {
 
 //Mostrar el perfil de usuario
 const mostrarPerfil = () => {
-   if (localStorage.getItem('photo') === 'null'  && localStorage.getItem('nombre') === 'null') {
+  if (localStorage.getItem('photo') === 'null' && localStorage.getItem('nombre') === 'null') {
     perfil.innerHTML += `
     <h3><abbr title="attribute">Mi Perfil</abbr></h3>
     <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
@@ -119,8 +118,8 @@ const mostrarPerfil = () => {
         <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
       </ul>
     </div>
-  `  
- } else{ 
+  `
+  } else {
     perfil.innerHTML += `
     <h3><abbr title="attribute">Mi Perfil</abbr></h3>
     <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
@@ -132,18 +131,19 @@ const mostrarPerfil = () => {
       </ul>
     </div>
   `
- }
+  }
 }
 mostrarPerfil()
 
 //Contador de likes
 const contador = () => {
-  const btnLike = document.getElementById('likes');
-  const numLikes = document.getElementById('numeros');
-  console.log(btnLike , numLikes)
+  let contLike = 0;
+  if (event.target) {
+    contLike++
+  }
+  console.log(contLike)
+  return contLike;
 }
-contador()
-let cont = 0;
-if (event.target) {
-  cont++
-}
+
+
+
