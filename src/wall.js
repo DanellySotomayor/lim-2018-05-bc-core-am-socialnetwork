@@ -60,6 +60,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
     tabla.innerHTML += `
       <div> 
       <br>
+      <p>${localStorage.getItem('email')}</p>
       <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
