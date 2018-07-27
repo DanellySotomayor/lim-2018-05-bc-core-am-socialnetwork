@@ -64,7 +64,7 @@ const messageForUser = (user) => {
   var user = user;
   // const contenido = document.getElementById('contenido');
   if (user.emailVerified) {
-    login.addEventListener('click', event => {
+    loginA.addEventListener('click', event => {
       console.log(event.target);
       window.location.href = 'wall.html';
     })
@@ -86,14 +86,15 @@ const googleLogin = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
+      console.log(result)
       const user = result.user;
-     window.location = 'wall.html' //Url aqui
+      window.location = 'wall.html' //Url aqui
     }).catch(error => {
       console.error(error);
     });
 }
 
-const btnFacebook = () => {
+const facebookLogin = () => {
   const providerfb = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(providerfb)
     .then((result) => {
@@ -106,7 +107,6 @@ const btnFacebook = () => {
 
 //mostrar u ocultar inicio de sesión y registro
 const createAccount = () => {
-  console.log('hola');
   document.getElementById('register-form').style.display = 'block';
   document.getElementById('form-signin').style.display = 'none';
 }
@@ -116,9 +116,9 @@ const backToLogin = () => {
   document.getElementById('register-form').style.display = 'none';
 }
 
-// closeModal.addEventListener('click', () => {
-//   document.getElementById('exampleModal').style.display = 'none';
-// })
+const closeModal = () => {
+  document.getElementById('exampleModal').style.display = 'none';
+}
 
 const recoverPassword = () => {
 	let auth = firebase.auth();
