@@ -50,6 +50,7 @@ const postPrivado = () => {
       contenido += `
     <div id="${doc.id}">
     <br>
+    <p>${doc.data().name}</p>
     <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -153,7 +154,7 @@ const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
     likes: parseInt(likes) + 1
   }).then(() => {
-    const btnLikes = document.querySelector('#' + id + '.likes');
+    const btnLikes = document.querySelector('#' + id + ' .likes');
     let numLike = likes
     //  console.log(numLike)
     btnLikes.innerHTML += numLike;
@@ -162,4 +163,5 @@ const incLikes = (id, likes) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
     });
+
 }
