@@ -1,5 +1,4 @@
 const btnPublicar = document.getElementById('btnPublicar');
-// const post = document.getElementById('post').value;
 const perfil = document.getElementById('perfil');
 const tabla = document.getElementById('tabla');
 const publico = document.getElementById('publico');
