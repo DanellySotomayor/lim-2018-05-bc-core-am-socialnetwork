@@ -1,36 +1,46 @@
-describe("data", () => {
+describe("validator", () => {
 
-  // function register
-  it("backToLogin debe función", () => {
-    assert.isFunction(backToLogin);
-  });
-
-  it("createAccount debe función", () => {
-    assert.isFunction(createAccount);
-  });
-
-  it("register debe función", () => {
-    assert.isFunction(register);
-  });
-
-  it("login debe función", () => {
+  it("la función de login debe ser global", () => {
     assert.isFunction(login);
   });
 
-  it("facebookLogin debe función", () => {
-    assert.isFunction(facebookLogin);
+  describe("login(email, password)", () => {
+    let email = "usuario@correo.com";
+    let password = "654321";
+    let regExpress = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let validator = login(email, password);
+
+    it("debe retornar objeto con propiedades email y password", () => {
+      assert.ok(validator.hasOwnProperty("email"));
+      assert.ok(validator.hasOwnProperty("password"));
+    });
+
+    it("debe retornar propiedad email=true y password=true para validar", () => {
+      assert.equal(validator.email, true);
+      assert.equal(validator.password, true);
+    });
   });
 
-  it("googleLogin debe función", () => {
-    assert.isFunction(googleLogin);
+  it("la función de register debe ser global", () => {
+    assert.isFunction(register);
   });
 
-  it("closeModal debe función", () => {
-    assert.isFunction(closeModal);
+  describe("register(email, password)", () => {
+    let email = "usuario@correo.com";
+    let password = "654321";
+    let regExpress = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let validator = register(email, password);
+
+    it("debe retornar objeto con propiedades email y password", () => {
+      assert.ok(validator.hasOwnProperty("email"));
+      assert.ok(validator.hasOwnProperty("password"));
+    });
+
+    it("debe retornar propiedad email=true y password=true para validar", () => {
+      assert.equal(validator.email, true);
+      assert.equal(validator.password, true);
+    });
   });
 
-  it("recoverPassword debe función", () => {
-    assert.isFunction(recoverPassword);
-  });
 
 });
