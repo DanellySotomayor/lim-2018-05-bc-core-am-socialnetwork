@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,14 +44,10 @@
     <br>
     <input class="form-control form-control-lg" type="text" placeholder="¿Qué estás pensando?" id="post">
     <br>
-    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-      aria-expanded="false">
-      <i class="fas fa-ellipsis-h"></i>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item btn-sm" type="button" id="publico">Público</button>
-      <button class="dropdown-item btn-sm" type="button" id="privado">Privado</button>
-    </div>
+    <select id="statusPost">
+    <option value="Publico">Publico</option>
+    <option value="Privado">Privado</option>
+    </select>
     <button class="btn btn-info" id="btnPublicar" onclick="guardar()">Publicar</button>
   </div>
 
@@ -69,7 +65,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="wall.js"></script>
-  <script src="home.js"></script>
+
 </body>
 
 </html>
