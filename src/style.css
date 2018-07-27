@@ -35,6 +35,14 @@ header {
     margin: auto;
 }
 
+input {
+    color: #ffffff;
+}
+
+.input-field {
+    color: #000000;
+}
+
 .btn {
     width: 100%;
 }
