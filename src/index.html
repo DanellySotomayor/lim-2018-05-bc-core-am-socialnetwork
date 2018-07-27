@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">
   <title>U+Us Nuestro espacio</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -16,94 +17,112 @@
 </head>
 
 <body>
-    <header>
-        <div>U+Us El feminismo es para todxs</div>
-    </header>
-    <div class="container-fluid ">
-        <div class="row">
-            <div class="form-signin" id="form-signin">
-                <img class="logo-uss" src="../src/img/uss.png">
-                <p class="font-weight-light">Para ti y nosotrxs. Nuestro espacio.</p>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input id="email2" type="email" placeholder="Email" class="form-control">
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input id="password2" type="password" placeholder="Contraseña" class=" form-control">
-                <button class="btn btn-success" id="iniciar">Ingresar</button>
-                <p>
-                    <a href="#" id="forgot-password" style="color: #ffffff">Olvidé mi contraseña</a>
-                </p>
-                <br>
-                <p style="color: #ffffff">¿No tienes una cuenta?</p>
-                <button class="btn btn-success" id="createAccount">Crear una cuenta</button>
-                <br>
-                <br>
-                <p style="color: #ffffff">O ingresa con:</p>
-                <button type="button" class="icon-facebook ml-2" id="facebook">
-                    <img src="../src/img/logofacebook.png" />
-                </button>
-                <button type="button" class="icon-google ml-2" id="gmail">
-                    <img src="../src/img/logogmail.png" />
-                </button>
-                <br>
-                <br>
-                <p>
-                    <a href="home.html" style="color: #ffffff">Llévame directamente</a>
-                </p>
-            </div>
-        </div>
-
-    <div class="register" id="register-form">
-      <div class="row">
-        <h5 class="h3 mb-3 font-weight-normal">¿Quieres unirte a la red? ¡Regístrate aquí!</h5>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required="true" class="form-control">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true" class="form-control">
-        <br>
-        <br>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="register">Guardar</button>
-      </div>
-    </div>
-  </div>
-  
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">¡Bienvenidx!</h5>
-          <button type="button" class="close" id="close-register" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" id="goLogin">Ir a inicio de sesión</button>
+  <!-- <header>
+    <div>U+Us El feminismo es    para todxs</div> -->
+  <!-- </header> -->
+  <div class="container">
+    <div class="row">
+      <!-- Login -->
+      <div class="col s12 m8 l8 left">
+        <div class="form-signin" id="form-signin">
+          <img class="logo-uss" src="../src/img/uss.png"></img>
+          <p class="font-weight-light">Para ti y nosotrxs. Nuestro espacio.</p>
+          <!-- <div class="inputs-for-login"> -->
+          <input id="email2" type="email" class="validate" placeholder="Correo electrónico">
+          <span class="helper-text" data-error="Ingresa un email válido" data-success=""></span>
+          <input id="password2" type="password" placeholder="Contraseña">
+          <p class="right-align">
+            <a href="#" id="forgot-password" style="color: #ffffff">Olvidé mi contraseña</a>
+          </p>
+          <!-- </div> -->
+          <!-- <div class="buttons-for-login"> -->
+          <button class="waves-effect waves-light btn indigo accent-1" id="iniciar">Ingresar</button>
+          <br>
+          <p>¿No tienes una cuenta?</p>
+          <button class="waves-effect waves-light btn light-green" id="createAccount">Crear cuenta</button>
+          <!-- </div> -->
+          <p>O ingresa con:</p>
+          <div class="social-media">
+            <button type="button" id="facebook">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button type="button" id="gmail">
+              <i class="fab fa-google"></i>
+            </button>
+          </div>
+          <p>
+            <a href="home.html" style="color: #ffffff">Llévame directamente</a>
+          </p>
         </div>
       </div>
+      <!-- Registro -->
+      <div class="col s12 m8 l8">
+        <div class="register" id="register-form">
+          <img class="logo-uss" src="../src/img/uss.png"></img>
+          <p class="font-weight-light">¿Quieres unirte a la red? ¡Regístrate aquí!</p>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required="true" class="form-control">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true" class="form-control">
+          <a class="waves-effect waves-light btn light-green modal-trigger" href="#modal1" id="register">Registrarme</a>
+          <p>Al crear una cuenta aceptas nuestras
+            <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal2" style="color: #ffffff">Normas de convivencia</a>
+          </p>
+          <p>¿Ya tienes cuenta?
+            <a href="#modal2" style="color: #ffffff" id="goLogin">Loguéate</a>
+          </p>
+        </div>
+      </div>
+      <!-- Descripción -->
+      <!-- <div class="col s12 m4 l4 right">
+          <p style="color:#ffffff"> </p>
+            <img class="feminism-cloud" src="../src/img/feminism-cloud2.png"></img>
+          <p style="color:#ffffff">¿Ya tienes cuenta?</p>
+      </div> -->
+
+
     </div>
-    
+  </div>
+  <!-- Modal1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>¡Bienvenidx!</h5>
+        <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="goLogin">Ir a inicio de sesión</a>
+    </div>
   </div>
 
-  <div class="normas">
-    <h2>¡Bienvenidx!</h2>
-    <p>En U+US encontrarás un espacio donde compartir tus ideas, experiencias y testimonios de amor y empoderamiento libremente.
-      Sin embargo, el respeto y la solidaridad con lxs demás es lo más importante, por eso tenemos unas sencillas normas:</p>
-    <p>- Los insultos, mensajes de odio e intolerancia serán borrados inmediatamente y el usuario eliminado de la plataforma.</p>
-    <p>- La información privada, denuncias, testimonios o conversaciones no pueden llevarse a otros espacios o plataformas sin
-      autorización. Queremos que este sea un lugar seguro para todxs.</p>
+  <!-- Modal2 -->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>NORMAS DE CONVIVENCIA</h5>
+        <p>Al crearse una cuenta, los usuarios están de acuerdo en abstenerse de usar la platafoma de la siguiente manera o
+          con los siguientes objetivos:
+          <li>Con fines ilícitos.</li>
+          <li>Con el fin de acosar y/o amenazar a los demás usuarios.</li>
+          <li>Con el fin de obtener o divulgar información privada de terceros.</li>
+          <li>Con el fin de publicar noticias falsas o manipuladas de manera malintencionada.</li>
+          <li>Con el fin de provocar la molestia injustificada a los demás usuarios y lectores. </li>
+          <p>Los usuarios podrán modificar o actualizar la información suministrada en cualquier momento y podrán solicitar
+            el retiro de su información personal enviando un correo a femme@gmail.com.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
   </div>
+
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="app.js"></script>
+  <script src="calls.js"></script>
   <!-- <script src="wall.js"></script> -->
 </body>
+
 </html>
