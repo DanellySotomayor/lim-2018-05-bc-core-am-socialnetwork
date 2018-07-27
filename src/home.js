@@ -22,5 +22,22 @@ const postPublico = () => {
     tablaPublica.innerHTML = contenido
   });
 }
-
 postPublico();
+
+//Contador de likes
+const incLikes = (id, likes) => {
+  db.collection("users").doc(id).update({
+    likes: parseInt(likes) + 1
+  }).then(() => {
+    const btnLikes = document.querySelector('#' + id + ' .likes');
+    let numLike = likes
+    //  console.log(numLike)
+    btnLikes.innerHTML += numLike;
+  })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+    });
+
+}
+

@@ -150,12 +150,12 @@ postPrivado();
 //Contador de likes
 const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
-    likes: likes + 1
+    likes: parseInt(likes) + 1
   }).then(() => {
     const btnLikes = document.querySelector('#' + id + ' .likes');
-    let numLike = parseInt(likes)
-    // console.log(numLike)
-    btnLikes.innerHTML += '' + numLike;
+    let numLike = likes
+    //  console.log(numLike)
+    btnLikes.innerHTML += numLike;
   })
     .catch((error) => {
       // The document probably doesn't exist.
