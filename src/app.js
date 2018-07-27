@@ -20,6 +20,8 @@ const register = () => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      console.log(errorCode);
+      alert(errorMessage);
     });
 }
 
@@ -33,6 +35,8 @@ const login = () => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      console.log(errorCode);
+      alert(errorMessage);
     });
 }
 
@@ -116,10 +120,6 @@ const backToLogin = () => {
   document.getElementById('register-form').style.display = 'none';
 }
 
-const closeModal = () => {
-  document.getElementById('exampleModal').style.display = 'none';
-}
-
 const recoverPassword = () => {
 	let auth = firebase.auth();
 	let emailAddress = document.getElementById('email2').value;
@@ -138,5 +138,4 @@ registerA.addEventListener("click", () => register());
 loginA.addEventListener("click", () => login());
 btnFacebookA.addEventListener("click", () => facebookLogin());
 btnGoogleA.addEventListener("click", () => googleLogin());
-closeModalA.addEventListener("click", () => closeModal());
 recoverPasswordA.addEventListener("click", () => recoverPassword());
