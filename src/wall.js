@@ -24,6 +24,7 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
+      name : localStorage.getItem('email'),
       likes: 1,
       public: statusPost.value,
       createdAt: new Date()
@@ -152,7 +153,7 @@ const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
     likes: parseInt(likes) + 1
   }).then(() => {
-    const btnLikes = document.querySelector('#' + id + ' .likes');
+    const btnLikes = document.querySelector('#' + id + '.likes');
     let numLike = likes
     //  console.log(numLike)
     btnLikes.innerHTML += numLike;
@@ -161,5 +162,4 @@ const incLikes = (id, likes) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
     });
-
 }

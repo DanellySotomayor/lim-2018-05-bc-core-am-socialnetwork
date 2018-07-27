@@ -15,7 +15,7 @@ const postPublico = () => {
     <div id="${doc.id}">
     <br>
     <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
+    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')"><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
   </div>
       `
     });
@@ -29,15 +29,13 @@ const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
     likes: parseInt(likes) + 1
   }).then(() => {
-    const btnLikes = document.querySelector('#' + id + ' .likes');
+    const btnLikes = document.querySelectorAll('#' + id + '.likes');
     let numLike = likes
-    //  console.log(numLike)
-    btnLikes.innerHTML += numLike;
+    // console.log(numLike)
+    btnLikes.innerHTML += '' + numLike;
   })
     .catch((error) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
     });
-
 }
-
