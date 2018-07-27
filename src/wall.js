@@ -1,5 +1,5 @@
 const btnPublicar = document.getElementById('btnPublicar');
-const post = document.getElementById('post').value;
+// const post = document.getElementById('post').value;
 const perfil = document.getElementById('perfil');
 const tabla = document.getElementById('tabla');
 const publico = document.getElementById('publico');
@@ -15,7 +15,6 @@ firebase.initializeApp({
   projectId: "femme-18162"
 });
 
-
 // Initialize Cloud Firestore through Firebase
 const db = firebase.firestore();
 
@@ -27,14 +26,14 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
-      likes: 0,
+      likes: 1,
       public: false,
-      createdAt: new Date(),
+      createdAt: new Date()
     })
-      .then((docRef) => {
+      .then( (docRef) => {
         document.getElementById('post').value = '';
       })
-      .catch((error) => {
+      .catch( (error) =>{
         console.error("Error adding document: ", error);
       });
   } else {
@@ -57,7 +56,7 @@ const postPrivado = () => {
       <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
       <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
     </div>
-    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" class="likes"><i class="fas fa-heart"></i> Like</button>
+    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
   </div>
       `
     });
@@ -122,28 +121,28 @@ const cerrar = () => {
 const mostrarPerfil = () => {
   if (localStorage.getItem('photo') === 'null' && localStorage.getItem('nombre') === 'null') {
     perfil.innerHTML += `
-    <h3><abbr title="attribute">Mi Perfil</abbr></h3>
-    <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
-    <br>
-    <div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item list-group-item-secondary">Usuarix <i class="far fa-laugh-beam"></i> </li>
-        <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
-      </ul>
-    </div>
+   <h3><abbr title="attribute">Mi Perfil</abbr></h3>
+   <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
+   <br>
+   <div>
+     <ul class="list-group list-group-flush">
+       <li class="list-group-item list-group-item-secondary">Usuarix <i class="far fa-laugh-beam"></i> </li>
+       <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
+     </ul>
+   </div>
   `
   } else {
     perfil.innerHTML += `
-    <h3><abbr title="attribute">Mi Perfil</abbr></h3>
-    <img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left">
-    <br>
-    <div>
-      <ul class="list-group list-group-flush">
-         <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
-        <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
-      </ul>
-    </div>
-  `
+   <h3><abbr title="attribute">Mi Perfil</abbr></h3>
+   <picture><img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left"></picture>
+   <br>
+   <div>
+     <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
+       <li class="list-group-item list-group-item-success">${localStorage.getItem('email')}</li>
+     </ul>
+   </div>
+ `
   }
 }
 mostrarPerfil()
@@ -153,16 +152,14 @@ const incLikes = (id, likes) => {
   db.collection("users").doc(id).update({
     likes: likes + 1
   }).then(() => {
-    const btnLikes = document.querySelector('#'+id+' .likes');
-    let numLike = '';
-    numLike= `
-    <span id="numeros">${likes}</span>
-    ` 
-    btnLikes.innerHTML += numLike;   
-    })
+    const btnLikes = document.querySelector('#' + id + ' .likes');
+    let numLike = parseInt(likes)
+    // console.log(numLike)
+    btnLikes.innerHTML += '' + numLike;
+  })
     .catch((error) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
     });
-   
+
 }
