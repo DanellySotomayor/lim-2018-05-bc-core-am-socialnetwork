@@ -1,12 +1,10 @@
 const btnPublicar = document.getElementById('btnPublicar');
-// const post = document.getElementById('post').value;
 const perfil = document.getElementById('perfil');
 const tabla = document.getElementById('tabla');
-const publico = document.getElementById('publico');
-const privado = document.getElementById('privado');
 
-publico.addEventListener("click", () => postPublico());
-privado.addEventListener("click", () => postPrivado());
+const statusPost = document.getElementById('statusPost');
+
+
 
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
@@ -27,7 +25,7 @@ const guardar = () => {
       first: post,
       uidUser: localStorage.getItem('userUID'),
       likes: 1,
-      public: false,
+      public: statusPost.value,
       createdAt: new Date()
     })
       .then( (docRef) => {
@@ -36,6 +34,7 @@ const guardar = () => {
       .catch( (error) =>{
         console.error("Error adding document: ", error);
       });
+      postPrivado();
   } else {
     alert('Se olvido de escribir un Post')
   }
@@ -44,7 +43,7 @@ const guardar = () => {
 //Leer documentos
 const postPrivado = () => {
   const tabla = document.getElementById('tabla');
-  db.collection("users").where("public", "==", false).onSnapshot((querySnapshot) => {
+  db.collection("users").where("public", "==", 'Privado').onSnapshot((querySnapshot) => {
     let contenido = '';
     querySnapshot.forEach((doc) => {
       contenido += `
@@ -145,7 +144,8 @@ const mostrarPerfil = () => {
  `
   }
 }
-mostrarPerfil()
+mostrarPerfil();
+postPrivado();
 
 //Contador de likes
 const incLikes = (id, likes) => {

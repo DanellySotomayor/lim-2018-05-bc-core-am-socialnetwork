@@ -1,24 +1,26 @@
+firebase.initializeApp({
+  apiKey: "AIzaSyDBi3SO4pgUpX4urYoutax2V5NINLab8go",
+  authDomain: "femme-18162.firebaseapp.com",
+  projectId: "femme-18162"
+});
+
+const db = firebase.firestore();
+
 const postPublico = () => {
-    const tabla = document.getElementById('tabla');
-    db.collection("users").onSnapshot((querySnapshot) => {
-      tabla.innerHTML = '';
-      querySnapshot.forEach((doc) => {
-    
-        tabla.innerHTML += `
-          <div id="${doc.id}"> 
-          <br>
-          <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <i class="fas fa-ellipsis-h"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <button class="dropdown-item btn-sm" type="button"  onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
-              <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
-            </div>
-            <button type="button" onclick = "incLikes('${doc.id}', ${doc.data().likes})" class="likes"><i class="fas fa-heart"></i> Like</button>
-          </div>
-          `
-      });
+  const tablaPublica = document.getElementById('tablaPublica');
+  db.collection("users").where("public", "==", 'Publico').onSnapshot((querySnapshot) => {
+    let contenido = '';
+    querySnapshot.forEach((doc) => {
+      contenido += `
+    <div id="${doc.id}">
+    <br>
+    <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
+    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
+  </div>
+      `
     });
-    }
+    tablaPublica.innerHTML = contenido
+  });
+}
+
+postPublico();

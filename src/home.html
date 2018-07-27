@@ -12,9 +12,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-  <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  crossorigin="anonymous">
   <title>U+Us Nuestro espacio</title>
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -23,26 +29,8 @@
   <header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-        <!-- Menú hamburguesa para celulares-->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Logo en proceso -->
-          <a class="logo white">
-            <img style="width:50%" src="#" alt="">
-          </a>
-        </div>
-
-        <!-- Funciones en barra de navegación-->
         <div>
           <ul class="nav navbar-nav navbar-right text-uppercase ">
-            <li>
-              <a href="wall.html">Mi perfil</a>
-            </li>
             <li>
               <a href="#">Amigos</a>
             </li>
@@ -57,49 +45,8 @@
 
   <!-- Sección de Posts-->
   <div class="col-md-6 col-md-offset-3">
-    <div class="center-block">
-      <div id="tabla">
+      <div id="tablaPublica">
       </div>
-      <article>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-        <img src="../src/img/post1.JPG" />
-        <div class="row">
-          <p class="col-sm-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-          </p>
-          <div class="col-sm-2 col-md-2">
-            <input type="button" class="btn btn-primary" value="More..." />
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-        <img src="../src/img/post2.JPG" />
-        <div class="row">
-          <p class="col-sm-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-          </p>
-          <div class="col-sm-2">
-            <input type="button" class="btn btn-primary" value="More..." />
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-        </h2>
-        <img src="../src/img/post3.JPG" />
-        <div class="row">
-          <p class="col-sm-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-          </p>
-          <div class="col-sm-2">
-            <input type="button" class="btn btn-primary" value="More..." />
-          </div>
-        </div>
-      </article>
-    </div>
   </div>
   <!-- Se vincula jQuery-CDN / Data / JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -108,5 +55,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+  <script src="home.js"></script>
 </body>
 </html>
