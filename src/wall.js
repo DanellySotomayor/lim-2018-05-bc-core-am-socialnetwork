@@ -24,6 +24,7 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
+      name : localStorage.getItem('email'),
       likes: 1,
       public: statusPost.value,
       createdAt: new Date()
@@ -49,6 +50,7 @@ const postPrivado = () => {
       contenido += `
     <div id="${doc.id}">
     <br>
+    <p>${doc.data().name}</p>
     <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
