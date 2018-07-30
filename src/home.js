@@ -13,11 +13,11 @@ const postPublico = () => {
     querySnapshot.forEach((doc) => {
       contenido += `
     <div id="${doc.id}">
-    <br>
-    <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-    <p>${doc.data().name}</p>
-    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
-  </div>
+      <br>
+      <p>${doc.data().name}</p>
+      <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
+      <button type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
+    </div>
       `
     });
     tablaPublica.innerHTML = contenido

@@ -24,18 +24,18 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
-      name : localStorage.getItem('email'),
+      name: localStorage.getItem('email'),
       likes: 1,
       public: statusPost.value,
       createdAt: new Date()
     })
-      .then( (docRef) => {
+      .then((docRef) => {
         document.getElementById('post').value = '';
       })
-      .catch( (error) =>{
+      .catch((error) => {
         console.error("Error adding document: ", error);
       });
-      postPrivado();
+    postPrivado();
   } else {
     alert('Se olvido de escribir un Post')
   }
@@ -48,17 +48,17 @@ const postPrivado = () => {
     let contenido = '';
     querySnapshot.forEach((doc) => {
       contenido += `
-    <div id="${doc.id}">
-    <br>
-    <p>${doc.data().name}</p>
-    <p class="caja-post">${doc.data().first}</p>
-    
-    <div class="col s12 m6 l4 valign-wrapper">
-      <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</a>
-      <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
+    <div class="publish-content" id="${doc.id}">
+      <p>${doc.data().name}</p>
+      <p class="caja-post">${doc.data().first}</p>
+      <div class="col s12 m6 l4 valign-wrapper">
+       <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</a>
+       <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
+      </div>
+      <div class="col s12 m6 l4 valign-wrapper">
+       <button class="likes-button" type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
+      </div>
     </div>
-    <a class="waves-effect waves-light btn indigo accent-1" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></a>
-  </div>
       `
     });
     tabla.innerHTML = contenido
