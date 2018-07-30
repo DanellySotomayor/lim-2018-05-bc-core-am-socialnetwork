@@ -140,24 +140,16 @@ label {
 /* estilos para perfil */
 
 .caja-post {
-    font-family: Century,sans-serif;
+    font-family: inherit;
     color: #303030;
-    font-size: 18px;
-    font-weight: 400;
     text-align: left;
-    background: #bcc8e8;
-    margin: 5px 70px;
+    margin: 5px ;
     overflow: hidden;
     padding: 20px;
-    border-radius: 25px 0px 25px 0px;
-    -moz-border-radius: 25px 0px 25px 0px;
-    -webkit-border-radius: 25px 0px 25px 0px;
+    border-radius: 3px;
     border: 1px solid #b9c2dc;
 }
 
-#dropdownMenu2{
-    margin-left: 70px;
-}
 
 /* .dropdown-menu {
     margin-top: 10px;
@@ -165,10 +157,17 @@ label {
 
 
 /* Estilos para Wall */
+nav {
+    position: fixed;
+    background-color: #211146;
+    top: 0;
+}
 
-.nav-wrapper {
-    background-color: #211146 !important;
-  }
+nav .nav-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
 .sidenav-overlay {
     z-index: -1;
@@ -179,9 +178,15 @@ label {
   }
 
 
-#perfil {
-    border: #303030 solid;
-    background: #ffffff;
-    width: 70%;
-    height: auto;
+.wall{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+img {
+    width: 100px;
+}
+.profile-publish{
+    vertical-align: middle;
 }
