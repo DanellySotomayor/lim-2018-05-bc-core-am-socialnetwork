@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">
   <title>U+Us Nuestro espacio</title>
@@ -17,96 +17,98 @@
 </head>
 
 <body>
-  <!-- <header>
-    <div>U+Us El feminismo es    para todxs</div> -->
-  <!-- </header> -->
-  <div class="container">
-    <div class="row">
-      <!-- Login -->
-      <div class="col s12 m8 l8 left">
-        <div class="form-signin" id="form-signin">
-          <img class="logo-uss" src="../src/img/uss.png"></img>
-          <p class="font-weight-light">Para ti y nosotrxs. Nuestro espacio.</p>
-          <!-- <div class="inputs-for-login"> -->
-          <input id="email2" type="email" class="validate" placeholder="Correo electrónico">
-          <span class="helper-text" data-error="Ingresa un email válido" data-success=""></span>
-          <input id="password2" type="password" placeholder="Contraseña">
-          <p class="right-align">
-            <a href="#" id="forgot-password" style="color: #ffffff">Olvidé mi contraseña</a>
-          </p>
-          <!-- </div> -->
-          <!-- <div class="buttons-for-login"> -->
-          <button class="waves-effect waves-light btn indigo accent-1" id="iniciar">Ingresar</button>
-          <br>
-          <p>¿No tienes una cuenta?</p>
-          <button class="waves-effect waves-light btn light-green" id="createAccount">Crear cuenta</button>
-          <!-- </div> -->
-          <p>O ingresa con:</p>
-          <div class="social-media">
-            <button type="button" id="facebook">
-              <i class="fab fa-facebook-f"></i>
-            </button>
-            <button type="button" id="gmail">
-              <i class="fab fa-google"></i>
-            </button>
-          </div>
-          <p>
-            <a href="home.html" style="color: #ffffff">Llévame directamente</a>
-          </p>
+  <header>
+    <div></div> 
+  </header>
+<div class="container">
+  <div class="row">
+    <!-- Login -->
+    <div class="col s12 m8 l8 left">
+      <div class="form-signin" id="form-signin">
+        <img class="logo-uss" src="../src/img/uss.png" alt="logo-haver">
+        <p class="font-weight-light">Para ti y nosotrxs. Nuestro espacio.</p>
+        <!-- <div class="inputs-for-login"> -->
+        <input id="email2" type="email" class="validate" placeholder="Correo electrónico">
+        <span class="helper-text" data-error="Ingresa un email válido" data-success=""></span>
+        <input id="password2" type="password" placeholder="Contraseña">
+        <p class="right-align">
+          <a href="#" id="forgot-password" style="color: #ffffff; text-decoration: underline">Olvidé mi contraseña</a>
+        </p>
+        <!-- </div> -->
+        <!-- <div class="buttons-for-login"> -->
+        <button class="waves-effect waves-light btn indigo accent-1" id="iniciar">Ingresar</button>
+        <br>
+        <p>¿No tienes una cuenta?</p>
+        <button class="waves-effect waves-light btn light-green" id="createAccount">Crear cuenta</button>
+        <!-- </div> -->
+        <p>O ingresa con:</p>
+        <div class="social-media">
+          <button type="button" id="facebook">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button type="button" id="gmail">
+            <i class="fab fa-google"></i>
+          </button>
         </div>
+        <p>
+          <a href="home.html" style="color: #ffffff; text-decoration: underline">Llévame directamente</a>
+        </p>
       </div>
-      <!-- Registro -->
-      <div class="col s12 m8 l8">
-        <div class="register" id="register-form">
-          <img class="logo-uss" src="../src/img/uss.png"></img>
-          <p class="font-weight-light">¿Quieres unirte a la red? ¡Regístrate aquí!</p>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required="true" class="form-control">
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required="true" class="form-control">
-          <a class="waves-effect waves-light btn light-green modal-trigger" href="#modal1" id="register">Registrarme</a>
-          <p>Al crear una cuenta aceptas nuestras
-            <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal2" style="color: #ffffff">Normas de convivencia</a>
-          </p>
-          <p>¿Ya tienes cuenta?
-            <a href="#modal2" style="color: #ffffff" id="goLogin">Loguéate</a>
-          </p>
-        </div>
-      </div>
-      <!-- Descripción -->
-      <!-- <div class="col s12 m4 l4 right">
-          <p style="color:#ffffff"> </p>
-            <img class="feminism-cloud" src="../src/img/feminism-cloud2.png"></img>
-          <p style="color:#ffffff">¿Ya tienes cuenta?</p>
-      </div> -->
-
-
     </div>
+    <!-- Registro -->
+    <div class="col s12 m8 l8">
+      <div class="register" id="register-form">
+        <img class="logo-uss" src="../src/img/uss.png" alt="logo-haver">
+        <p class="font-weight-light">¿Quieres unirte a la red? ¡Regístrate aquí!</p>
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" type="email" placeholder="Ingresa un e-mail de registro válido" required class="form-control">
+        <label for="password" class="sr-only">Password</label>
+        <input id="password" type="password" placeholder="Ingresa contraseña de 6 caracteres o más" required class="form-control">
+        <a class="waves-effect waves-light btn light-green modal-trigger" href="#modal1" id="register">Registrarme</a>
+        <p>Al crear una cuenta aceptas nuestras
+          <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal2" style="color: #ffffff; text-decoration: underline">Normas de convivencia</a>
+        </p>
+        <p>¿Ya tienes cuenta?
+          <a href="#modal2" style="color: #ffffff; text-decoration: underline" id="goLogin">Loguéate</a>
+        </p>
+      </div>
+    </div>
+    <!-- Descripción -->
+    <!-- <div class="col s12 m4 l4 left cloud">
+      <p style="color:#ffffff">¿Ya tienes cuenta?</p>
+      <img class="feminism-cloud" src="../src/img/frase-haver.png"></img>
+      <p style="color:#ffffff">¿Ya tienes cuenta?</p>
+    </div>
+  </div> -->
+
   </div>
+
   <!-- Modal1 -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>¡Bienvenidx!</h5>
-        <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
+      <h4>¡Bienvenidx!</h4>
+      <p>No olvides verificar tu cuenta para poder ingresar. Te hemos enviado un enlace al correo que registraste.</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="goLogin">Ir a inicio de sesión</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
     </div>
   </div>
 
   <!-- Modal2 -->
   <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>NORMAS DE CONVIVENCIA</h5>
-        <p>Al crearse una cuenta, los usuarios están de acuerdo en abstenerse de usar la platafoma de la siguiente manera o
-          con los siguientes objetivos:
+      <h4>NORMAS DE CONVIVENCIA</h4>
+      <p>Al crearse una cuenta, los usuarios están de acuerdo en abstenerse de usar la platafoma de la siguiente manera o con
+        los siguientes objetivos:
+        <ul>
           <li>Con fines ilícitos.</li>
           <li>Con el fin de acosar y/o amenazar a los demás usuarios.</li>
           <li>Con el fin de obtener o divulgar información privada de terceros.</li>
           <li>Con el fin de publicar noticias falsas o manipuladas de manera malintencionada.</li>
           <li>Con el fin de provocar la molestia injustificada a los demás usuarios y lectores. </li>
-          <p>Los usuarios podrán modificar o actualizar la información suministrada en cualquier momento y podrán solicitar
-            el retiro de su información personal enviando un correo a femme@gmail.com.</p>
+        </ul>
+        <p>Los usuarios podrán modificar o actualizar la información suministrada en cualquier momento y podrán solicitar el
+          retiro de su información personal enviando un correo a femme@gmail.com.</p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>

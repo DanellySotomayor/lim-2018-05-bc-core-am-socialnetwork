@@ -7,43 +7,61 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
   <!-- Se vinculan estilos-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
   <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
   <title>U+Us Nuestro espacio</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="wall-background">
   <!-- Barra de navegación-->
-  <header>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-right text-uppercase ">
-          <li>
-            <a href="wall.html">perfil</a>
-          </li>
-          <li>
-            <a href="index.html">Log-out</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">HAVEN</a>
+      <a href="#" data-target="home-navbar" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Amigos</a>
+        </li>
+        <li>
+          <a href="wall.html" class="list-group-item list-group-item-action list-group-item-primary">Volver</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="home-navbar">
+    <li>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Amigos</a>
+    </li>
+    <li>
+      <a href="wall.html" class="list-group-item list-group-item-action list-group-item-primary">Volver</a>
+    </li>
+    <li>
+      <a class="sidenav-close" href="#!">Cerrar</a>
+    </li>
+  </ul>
 
   <!-- Sección de Posts-->
-  <div class="col-md-6 col-md-offset-3">
-    <div id="tablaPublica">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5>Lo que los usuarixs comentan:</h5>
+        <div id="tablaPublica">
+        </div>
+      </div>
     </div>
   </div>
   <!-- Se vincula jQuery-CDN / Data / JS-->
@@ -51,9 +69,10 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
   <script src="home.js"></script>
+  <script src="calls.js"></script>
 </body>
 
 </html>

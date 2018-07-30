@@ -24,18 +24,18 @@ const guardar = () => {
     db.collection("users").add({
       first: post,
       uidUser: localStorage.getItem('userUID'),
-      name : localStorage.getItem('email'),
+      name: localStorage.getItem('email'),
       likes: 1,
       public: statusPost.value,
       createdAt: new Date()
     })
-      .then( (docRef) => {
+      .then((docRef) => {
         document.getElementById('post').value = '';
       })
-      .catch( (error) =>{
+      .catch((error) => {
         console.error("Error adding document: ", error);
       });
-      postPrivado();
+    postPrivado();
   } else {
     alert('Se olvido de escribir un Post')
   }
@@ -48,17 +48,17 @@ const postPrivado = () => {
     let contenido = '';
     querySnapshot.forEach((doc) => {
       contenido += `
-    <div id="${doc.id}">
-    <br>
-    <p>${doc.data().name}</p>
-    <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
-    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item btn-sm" type="button" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</button>
-      <button class="dropdown-item btn-sm" type="button" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</button>
+    <div class="publish-content" id="${doc.id}">
+      <p>${doc.data().name}</p>
+      <p class="caja-post">${doc.data().first}</p>
+      <div class="col s12 m6 l4 valign-wrapper">
+       <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</a>
+       <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
+      </div>
+      <div class="col s12 m6 l4 valign-wrapper">
+       <button class="likes-button" type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
+      </div>
     </div>
-    <button  type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
-  </div>
       `
     });
     tabla.innerHTML = contenido
@@ -122,9 +122,9 @@ const cerrar = () => {
 const mostrarPerfil = () => {
   if (localStorage.getItem('photo') === 'null' && localStorage.getItem('nombre') === 'null') {
     perfil.innerHTML += `
-   <h3><abbr title="attribute">Mi Perfil</abbr></h3>
-   <picture><img src="../img/Captura.PNG" alt="fotoperfil" class="rounded float-left"></picture>
-   <br>
+   <h3>Mi Perfil</h3>
+   <picture><img src="../img/Captura.PNG" alt="fotoperfil"></picture>
+  
    <div>
      <ul class="list-group list-group-flush">
        <li class="list-group-item list-group-item-secondary">Usuarix <i class="far fa-laugh-beam"></i> </li>
@@ -134,9 +134,9 @@ const mostrarPerfil = () => {
   `
   } else {
     perfil.innerHTML += `
-   <h3><abbr title="attribute">Mi Perfil</abbr></h3>
-   <picture><img src="${localStorage.getItem('photo')}" alt="fotoperfil" class="rounded float-left"></picture>
-   <br>
+   <h3>Mi Perfil</h3>
+   <picture><img src="${localStorage.getItem('photo')}" alt="fotoperfil"></picture>
+
    <div>
      <ul class="list-group list-group-flush">
         <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>

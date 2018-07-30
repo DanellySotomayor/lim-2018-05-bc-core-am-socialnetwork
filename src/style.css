@@ -19,14 +19,10 @@ header {
   }
 
 .logo-uss {
-    margin-bottom: 1.5rem!important;
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
 }
 
-.container {
-    margin-top: 50px;
-}
 
 .buttons-for-login,
 .inputs-for-login {
@@ -35,22 +31,20 @@ header {
     margin: auto;
 }
 
-input {
-    color: #ffffff;
-}
-
 .input-field {
-    color: #000000;
+    text-decoration-color: #686565;
+    display: contents;
 }
 
 .btn {
     width: 100%;
 }
 
-.social-media {
+.social-media button {
     width: 100px;
-    height: 40px;
+    height: 30px;
     margin: auto;
+    border-radius: 5px;
 }
 
 .form-signin {
@@ -59,7 +53,7 @@ input {
     padding: 15px;
     text-align: center;
     color: #ffffff;
-    position: absolute;
+
     display: block;
 }
 
@@ -67,7 +61,7 @@ input {
     display: block;
 }
 
-.right {
+.container .cloud {
     display: block;
 }
 
@@ -77,7 +71,6 @@ input {
     padding: 15px;
     text-align: center;
     color: #ffffff;
-    position: absolute; 
 }
 
 .normas {
@@ -98,21 +91,6 @@ label {
     margin-bottom: .5rem;
 }
 
-
-/* .form-signin  {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-} */
-
 .icon-facebook:hover{
     background: #60708d;   
 } 
@@ -120,58 +98,43 @@ label {
     background: #b83e3e;  
 }
 
-
-
 @media screen and (min-width: 700px) {
-  
-
   .register {
     display: none;
   } 
- 
-  /* .normas {
-    top: 650px;
-    left: 0;
-    margin-right: 10px;
-    display: block;
-  } */
 }
 
 /* estilos para perfil */
 
 .caja-post {
-    font-family: Century,sans-serif;
-    color: #303030;
-    font-size: 18px;
-    font-weight: 400;
+    font-family: inherit;
+    color: #686565;
     text-align: left;
-    background: #bcc8e8;
-    margin: 5px 70px;
-    overflow: hidden;
+    margin: 5px ;
+    overflow: inherit;
     padding: 20px;
-    border-radius: 25px 0px 25px 0px;
-    -moz-border-radius: 25px 0px 25px 0px;
-    -webkit-border-radius: 25px 0px 25px 0px;
+    border-radius: 3px;
     border: 1px solid #b9c2dc;
 }
 
-#dropdownMenu2{
-    margin-left: 70px;
+nav .nav-wrapper {
+    height: 100%;
+    width: 100%;
 }
-
-/* .dropdown-menu {
-    margin-top: 10px;
-} */
-
-
-/* Estilos para Wall */
-
-.nav-wrapper {
-    background-color: #211146 !important;
-  }
 
 .sidenav-overlay {
     z-index: -1;
+}
+
+nav {
+    position: sticky;
+    background-color: #211146;
+    top: 0;
+    z-index: 10;
+}
+
+nav .brand-logo {
+    margin: 0 15px;
 }
 
 .wall-background {
@@ -179,9 +142,43 @@ label {
   }
 
 
-#perfil {
-    border: #303030 solid;
-    background: #ffffff;
-    width: 70%;
-    height: auto;
+.wall{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+img {
+    width: 100px;
+}
+
+.feminism-cloud{
+    width: 100%;
+}
+
+.likes-button {
+    background: #211146;
+    color: #ffffff;
+    width: 105px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.privacy-select {
+    color: #686565;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #686565;
+}
+
+.footer-copyright {
+    background: #211146;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.publish-content {
+    margin-top: 10px;
+    display: flow-root;
 }
