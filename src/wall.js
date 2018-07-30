@@ -48,10 +48,12 @@ const postPrivado = () => {
     let contenido = '';
     querySnapshot.forEach((doc) => {
       contenido += `
-    <div class="publish-content" id="${doc.id}">
-      <p>${doc.data().name}</p>
-      <p class="caja-post">${doc.data().first}</p>
-      <div class="col s12 m6 l4 valign-wrapper">
+    <div class="card publish-content" id="${doc.id}">
+      <div class="card-content">
+        <span class="card-title">${doc.data().name}</span>
+        <p class="caja-post">${doc.data().first}</p>
+      </div>
+      <div class="card-action">
        <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')"><i class="fas fa-pen"></i>Editar</a>
        <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
       </div>
