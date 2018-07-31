@@ -41,4 +41,3 @@ const incLikes = (id, likes) => {
     });
 
 }
-
