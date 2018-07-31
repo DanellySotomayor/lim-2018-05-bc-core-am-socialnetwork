@@ -54,9 +54,9 @@ const postPrivado = () => {
         contenido += `
         <div class="publish-content" id="${doc.id}">
           <p>${doc.data().name}</p>
-          <textarea class="materialize-textarea" id="myPost" disabled>${doc.data().first}</textarea>
+          <textarea class="materialize-textarea" id="${'myPost'+doc.id}" disabled>${doc.data().first}</textarea>
           <div class="col s12 m6 l4 valign-wrapper">
-           <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')" id="btnEdit"><i class="fas fa-pen"></i>Editar</a>
+           <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')" id="${'btnEdit'+doc.id}"><i class="fas fa-pen"></i>Editar</a>
            <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
           </div>
           <div class="col s12 m6 l4 valign-wrapper">
@@ -69,7 +69,7 @@ const postPrivado = () => {
         contenido += `
         <div class="publish-content" id="${doc.id}">
           <p>${doc.data().name}</p>
-          <textarea class="materialize-textarea" id="myPost" disabled>${doc.data().first}</textarea>
+          <textarea class="materialize-textarea" id="${'myPost'+doc.id}" disabled>${doc.data().first}</textarea>
           <div class="col s12 m6 l4 valign-wrapper">
            <button class="likes-button" type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
           </div>
@@ -85,42 +85,40 @@ const postPrivado = () => {
 //Borrar documentos
 const eliminar = (id) => {
   console.log('elimando', id);
-  confirm("Se eliminara este post")
-  db.collection("users").doc(id).delete().then(() => {
-  }).catch((error) => {
-    console.error("Error removing document: ", error);
-  });
-  const boton = document.getElementById('btnPublicar');
-  boton.onclick = guardar
+  const alertEliminar = confirm("Se eliminara este post");
+  if(alertEliminar === true){
+    db.collection("users").doc(id).delete().then(() => {
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  }
 }
 
 //Editar documentos
 const editar = (id, post) => {
   console.log('editando', id)
-  const textA = document.getElementById("myPost");
+  const textA = document.getElementById('myPost'+id);
   textA.disabled = false;
-  // console.log(textA.value , id);
-  document.getElementById("myPost").value = post;
-  const boton = document.getElementById('btnEdit');
-  // boton.innerHTML = 'Guardar';
-  // boton.onclick = () => {
-  //   const usersRef = db.collection("users").doc(id);
-  //   // Set the "capital" field of the city 'DC'
-  //   let post = document.getElementById('post').value;
+  document.getElementById('myPost'+id).value = post;
+  const boton = document.getElementById('btnEdit'+id);
 
-  //   return usersRef.update({
-  //     first: post,
-  //   })
-  //     .then(() => {
-  //       boton.innerHTML = 'Publicar';
-  //       document.getElementById('post').value = '';
-  //       boton.onclick = guardar
-  //     })
-  //     .catch((error) => {
-  //       // The document probably doesn't exist.
-  //       console.error("Error updating document: ", error);
-  //     });
-  // }
+  boton.innerHTML = 'Guardar';
+  boton.onclick = () => {
+  const usersRef = db.collection("users").doc(id);
+ 
+  let post = document.getElementById('myPost'+id).value;
+  return usersRef.update({
+    first: post,
+    })
+  .then(() => {
+  boton.innerHTML = 'Editar';
+  boton.onclick = editar;
+  })
+  .catch((error) => {
+   // The document probably doesn't exist.
+  console.error("Error updating document: ", error);
+  });
+  }
 }
 
 //cerrar sesion
