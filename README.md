@@ -136,11 +136,12 @@ Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
 
 ## Definición del producto
 
-Luego de realizar la investigación previa, hemos planteado una red social feminista que incluirá lo siguiente:
-* Registro de usuarios con correo electrónico
-* Registro de usuarios con Facebook y Gmail
-* Log in de usuarios con correo, Facebook y Gmail
-* Muro principal con posibilidad de compartir posts públicos
+**Principales usuarios**
+
+Nuestro público objetivo principal son mujeres peruanas que se identifican como feministas y que necesiten un espacio seguro donde poder expresar sus ideas sin sentirse observadas.
+Como público objetivo secundario identificamos a aliados y personas que apoyan el movimiento feminista y deseen brindar apoyo y soporte en esta comunidad.
+
+Tras la investigación realizada, se identificó como necesidad principal la existencia de una red social propia para personas que apoyen el movimiento feminista, ya que no existe un espacio totalmente dedicado a este ámbito como red social. Si bien es cierto, existen grupos y páginas en otras redes sociales, los posibles usuarios manifestaron que aún no los identifican como un espacio seguro y/o propio para poder expresarse.
 
 **Nombre**
 
@@ -149,8 +150,17 @@ Hemos optado por utilizar el nombre "U+US" ya que se refiere a la comunidad que 
 **Colores**
 Luego de lo conversado con los usuarios, llegamos a la elección de que la paleta de colores debe estar asociada a los movimientos feministas que ya existen para poder ganar afluencia de manera rápido: morado y verde.
 
+### Elementos básicos a incorporar
 
-### Prototipo de alta fidelidad
+Luego de realizar la investigación previa, hemos planteado una red social feminista que incluirá los siguientes elementos:
+* Registro de usuarios con correo electrónico
+* Registro de usuarios con Facebook y Gmail
+* Login de usuarios con correo, Facebook y Gmail
+* Muro principal con posibilidad de compartir posts públicos
+* Perfil donde podrá ver sus post privados
+
+
+### Prototipo de alta fidelidad - N°1
 
 A continuación presentamos el primer modelo de alta fidelidad elaborado en Figma para móbiles y PC, diseñado siguiente el principio Mobile First.
 ##### 1)Prototipo mobil:
@@ -158,6 +168,36 @@ A continuación presentamos el primer modelo de alta fidelidad elaborado en Figm
 
 ##### 2)Prototipo pc: 
 ![prototipo1](img/red9.gif)
+
+### Prototipo de alta fidelidad - N°2
+
+![prototipo3](img/prototipo2.png)
+
+### Conclusiones
+
+**Testing con prototipo N°1:**
+
+El usuario manifestó lo siguiente:
+- Los colores eran demasiado pasteles, requería colores que contrasten más entre ellos.
+- No identificaron jerarquía de colores en los botones de registro e ingreso.
+- Faltaba la opción de recuperar contraseña.
+- El logo no identificaba el movimiento feminista.
+
+Asimismo, el usuario indicó que, por ser una red social donde se iban a tratar temas delicados, se necesitaba realizar la identificación de cada usuario e incorporar Normas de uso o convivencia para que se pueda moderar el uso de la red social. 
+
+**Conclusiones:**
+- Se decidió optar por colores más oscuros, que contrasten con los colores de letras.
+- Cambiamos los colores de los botones para identificar jerarquías.
+- Se incorporó la opción de recuperar contraseña de Firebase.
+- Se ralizó el cambio de logo y nueva propuesta de nombre.
+
+**Testing con prototipo N°2:**
+
+El usuario manifestó lo siguiente:
+- Pudo identificar mejor los colores de cada botón y su jerarquía.
+- Le agradó la idea de tener Normas de Convivencia pero se recomendó que sean más cortos y que se envíen también por correo electrónico.
+- Sugirió tener una sección donde se describa mejor el objetivo de la página.
+
 
 ## Equipo de trabajo
 * [Maria Elena Zúñiga](https://github.com/malenazp)
