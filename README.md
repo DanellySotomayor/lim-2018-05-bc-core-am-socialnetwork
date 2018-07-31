@@ -173,6 +173,32 @@ A continuación presentamos el primer modelo de alta fidelidad elaborado en Figm
 
 ![prototipo3](img/prototipo2.png)
 
+### Conclusiones
+
+**Testing con prototipo N°1:**
+
+El usuario manifestó lo siguiente:
+- Los colores eran demasiado pasteles, requería colores que contrasten más entre ellos.
+- No identificaron jerarquía de colores en los botones de registro e ingreso.
+- Faltaba la opción de recuperar contraseña.
+- El logo no identificaba el movimiento feminista.
+
+Asimismo, el usuario indicó que, por ser una red social donde se iban a tratar temas delicados, se necesitaba realizar la identificación de cada usuario e incorporar Normas de uso o convivencia para que se pueda moderar el uso de la red social. 
+
+**Conclusiones:**
+- Se decidió optar por colores más oscuros, que contrasten con los colores de letras.
+- Cambiamos los colores de los botones para identificar jerarquías.
+- Se incorporó la opción de recuperar contraseña de Firebase.
+- Se ralizó el cambio de logo y nueva propuesta de nombre.
+
+**Testing con prototipo N°2:**
+
+El usuario manifestó lo siguiente:
+- Pudo identificar mejor los colores de cada botón y su jerarquía.
+- Le agradó la idea de tener Normas de Convivencia pero se recomendó que sean más cortos y que se envíen también por correo electrónico.
+- Sugirió tener una sección donde se describa mejor el objetivo de la página.
+
+
 ## Equipo de trabajo
 * [Maria Elena Zúñiga](https://github.com/malenazp)
 * [Leyla Ticze](https://github.com/ticze)
