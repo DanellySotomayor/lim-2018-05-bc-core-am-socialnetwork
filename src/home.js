@@ -15,7 +15,7 @@ const postPublico = () => {
     <div id="${doc.id}">
       <br>
       <p>${doc.data().name}</p>
-      <p class="font-weight-bold lead caja-post">${doc.data().first}</p>
+      <textarea class="materialize-textarea" id="${'myPost' + doc.id}" disabled>${doc.data().first}</textarea>
       <button type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
     </div>
       `

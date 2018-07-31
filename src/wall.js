@@ -1,7 +1,10 @@
 const btnPublicar = document.getElementById('btnPublicar');
 const perfil = document.getElementById('perfil');
 const tabla = document.getElementById('tabla');
+
 const statusPost = document.getElementById('statusPost');
+
+
 
 //CRUD: Create Reade Update Delete
 firebase.initializeApp({
@@ -15,9 +18,8 @@ const db = firebase.firestore();
 
 //Agregar documentos
 const guardar = () => {
-  if (statusPost.value === '') {
-    alert('Se olvido de seleccionar Privacidad')
-  } else if (post.value !== '') {
+  console.log('crearrrr');
+  if (post.value !== '') {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
@@ -42,17 +44,19 @@ const guardar = () => {
 //Leer documentos
 const postPrivado = () => {
   const tabla = document.getElementById('tabla');
+  
   db.collection("users").where("public", "==", 'Privado').onSnapshot((querySnapshot) => {
     let contenido = '';
     const userId = firebase.auth().currentUser;
+    console.log(userId.uid)
     querySnapshot.forEach((doc) => {
-      if (userId.uid === doc.data().uidUser) {
+      if(userId.uid === doc.data().uidUser) {
         contenido += `
         <div class="publish-content" id="${doc.id}">
           <p>${doc.data().name}</p>
-          <textarea class="materialize-textarea" id="${'myPost' + doc.id}" disabled>${doc.data().first}</textarea>
+          <textarea class="materialize-textarea" id="myPost" disabled>${doc.data().first}</textarea>
           <div class="col s12 m6 l4 valign-wrapper">
-           <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')" id="${'btnEdit' + doc.id}"><i class="fas fa-pen"></i>Editar</a>
+           <a class="waves-effect waves-light btn indigo accent-1" onclick="editar('${doc.id}','${doc.data().first}')" id="btnEdit"><i class="fas fa-pen"></i>Editar</a>
            <a class="waves-effect waves-light btn indigo accent-1" onclick="eliminar('${doc.id}')"><i class="fas fa-trash-alt"></i>Eliminar</a>
           </div>
           <div class="col s12 m6 l4 valign-wrapper">
@@ -65,14 +69,14 @@ const postPrivado = () => {
         contenido += `
         <div class="publish-content" id="${doc.id}">
           <p>${doc.data().name}</p>
-          <textarea class="materialize-textarea" id="${'myPost' + doc.id}" disabled>${doc.data().first}</textarea>
+          <textarea class="materialize-textarea" id="myPost" disabled>${doc.data().first}</textarea>
           <div class="col s12 m6 l4 valign-wrapper">
            <button class="likes-button" type="button" onclick = "incLikes('${doc.id}', '${doc.data().likes}')" ><i class="fas fa-heart"></i> Like  <span class="likes"></span></button>
           </div>
         </div>
           `;
       }
-
+     
     });
     tabla.innerHTML = contenido
   });
@@ -80,8 +84,9 @@ const postPrivado = () => {
 
 //Borrar documentos
 const eliminar = (id) => {
+  console.log('elimando', id);
   const alertEliminar = confirm("Se eliminara este post");
-  if (alertEliminar === true) {
+  if(alertEliminar === true){
     db.collection("users").doc(id).delete().then(() => {
     }).catch((error) => {
       console.error("Error removing document: ", error);
@@ -91,25 +96,31 @@ const eliminar = (id) => {
 
 //Editar documentos
 const editar = (id, post) => {
-  const textA = document.getElementById('myPost' + id);
+  console.log('editando', id)
+  const textA = document.getElementById("myPost");
   textA.disabled = false;
-  document.getElementById('myPost' + id).value = post;
-  const boton = document.getElementById('btnEdit' + id);
+  // console.log(textA.value , id);
+  document.getElementById("myPost").value = post;
+  const boton = document.getElementById('btnEdit');
   boton.innerHTML = 'Guardar';
   boton.onclick = () => {
-    const usersRef = db.collection("users").doc(id);
-    let post = document.getElementById('myPost' + id).value;
-    return usersRef.update({
-      first: post,
-    })
-      .then(() => {
-        boton.innerHTML = 'Editar';
-        boton.onclick = editar;
-      })
-      .catch((error) => {
-        console.error("Error updating document: ", error);
-      });
-  }
+  //   const usersRef = db.collection("users").doc(id);
+  //   // Set the "capital" field of the city 'DC'
+  //   let post = document.getElementById('post').value;
+
+  //   return usersRef.update({
+  //     first: post,
+  //   })
+  //     .then(() => {
+  //       boton.innerHTML = 'Publicar';
+  //       document.getElementById('post').value = '';
+  //       boton.onclick = guardar
+  //     })
+  //     .catch((error) => {
+  //       // The document probably doesn't exist.
+  //       console.error("Error updating document: ", error);
+  //     });
+ }
 }
 
 //cerrar sesion
