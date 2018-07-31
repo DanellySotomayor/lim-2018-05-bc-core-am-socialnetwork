@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+  <!-- Se vinculan estilos-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <link rel="shortcut icon" href="../src/img/uss-icon.png" type="image/x-icon">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+  <title>Haven Nuestro espacio</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="wall-background">
+  <!-- Barra de navegación-->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">HAVEN</a>
+      <a href="#" data-target="home-navbar" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Conócenos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="home-navbar">
+    <li>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Conócenos</a>
+    </li>
+    <li>
+      <a href="#" class="sidenav-close">Cerrar</a>
+    </li>
+  </ul>
+
+  <!-- Sección de Posts-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <h5>Lo que los usuarixs comentan:</h5>
+        <div id="tablaPublica">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Se vincula jQuery-CDN / Data / JS-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+  <script src="home.js"></script>
+  <script src="calls.js"></script>
+</body>
+
+</html>
