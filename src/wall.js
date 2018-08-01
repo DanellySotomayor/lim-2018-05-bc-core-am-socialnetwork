@@ -17,7 +17,9 @@ const db = firebase.firestore();
 const guardar = () => {
   if (statusPost.value === '') {
     alert('Se olvido de seleccionar Privacidad')
-  } else if (post.value !== '') {
+  } else if (post.value.trim() === '') {
+    alert('Se olvido de escribir un Post')
+  } else {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
@@ -34,8 +36,6 @@ const guardar = () => {
         console.error("Error adding document: ", error);
       });
     postPrivado();
-  } else {
-    alert('Se olvido de escribir un Post')
   }
 }
 
@@ -146,7 +146,6 @@ const mostrarPerfil = () => {
     perfil.innerHTML += `
    <h3>Mi Perfil</h3>
    <picture><img src="${localStorage.getItem('photo')}" alt="fotoperfil"></picture>
-
    <div>
      <ul class="list-group list-group-flush">
         <li class="list-group-item list-group-item-secondary">${localStorage.getItem('nombre')}</li>
@@ -175,4 +174,3 @@ const incLikes = (id, likes) => {
     });
 
 }
-
