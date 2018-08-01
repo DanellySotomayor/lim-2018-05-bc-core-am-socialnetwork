@@ -17,7 +17,9 @@ const db = firebase.firestore();
 const guardar = () => {
   if (statusPost.value === '') {
     alert('Se olvido de seleccionar Privacidad')
-  } else if (post.value !== '') {
+  } else if (post.value.trim() === '') {
+    alert('Se olvido de escribir un Post')
+  } else {
     let post = document.getElementById('post').value;
     db.collection("users").add({
       first: post,
@@ -34,8 +36,6 @@ const guardar = () => {
         console.error("Error adding document: ", error);
       });
     postPrivado();
-  } else {
-    alert('Se olvido de escribir un Post')
   }
 }
 
