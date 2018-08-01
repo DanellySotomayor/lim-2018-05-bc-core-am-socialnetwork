@@ -133,6 +133,16 @@ Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
 
 * ¿De qué colores se imaginan una red social como esta? *Colores vivos, como el naranja o amarillo.*
 
+### Conclusiones de investigación - necesidades del usuarix
+
+**Problemas identificados**
+- Carencia de una red social propiamente feminista.
+- Carencia de moderación en los grupos o páginas en Facebook o Twitter.
+- Sensación de inseguridad para expresarse en otras redes sociales. El usuarix se siente constantemente observado.
+
+**Necesidades del usuarix**
+
+Tras la investigación realizada, se identificó como necesidad principal la existencia de una red social propia para personas que apoyen el movimiento feminista, ya que no existe un espacio totalmente dedicado a este ámbito como red social. Si bien es cierto, existen grupos y páginas en otras redes sociales, los posibles usuarios manifestaron que aún no los identifican como un espacio seguro y/o propio para poder expresarse.
 
 ## Definición del producto
 
@@ -141,16 +151,21 @@ Entrevistada: Claudia Ulloa Villena (27 años), psicóloga y feminista.
 Nuestro público objetivo principal son mujeres peruanas que se identifican como feministas y que necesiten un espacio seguro donde poder expresar sus ideas sin sentirse observadas.
 Como público objetivo secundario identificamos a aliados y personas que apoyan el movimiento feminista y deseen brindar apoyo y soporte en esta comunidad.
 
-Tras la investigación realizada, se identificó como necesidad principal la existencia de una red social propia para personas que apoyen el movimiento feminista, ya que no existe un espacio totalmente dedicado a este ámbito como red social. Si bien es cierto, existen grupos y páginas en otras redes sociales, los posibles usuarios manifestaron que aún no los identifican como un espacio seguro y/o propio para poder expresarse.
+**Objetivos de los usuarios en relación al producto**
+
+* Publicar y compartir ideas y noticias relacionadas al movimiento feminista con su comunidad.
+* Encontrar un grupo de apoyo y soporte.
+* Encontrar un espacio y plataforma segura donde expresarse.
+* Poder identificar como "propio" un espacio en la red.
 
 **Nombre**
 
-Hemos optado por utilizar el nombre "U+US" ya que se refiere a la comunidad que se forma alrededor de un usuario que necesita apoyo.
+Hemos optado por utilizar el nombre "Haven" ya que significa "refugio" o "lugar seguro", lo cual representa la necesidad del usuarix en referencia a los problemas encontrados en la investigación.
 
 **Colores**
 Luego de lo conversado con los usuarios, llegamos a la elección de que la paleta de colores debe estar asociada a los movimientos feministas que ya existen para poder ganar afluencia de manera rápido: morado y verde.
 
-### Elementos básicos a incorporar
+### Elementos básicos de una red social a incorporar en el proyecto
 
 Luego de realizar la investigación previa, hemos planteado una red social feminista que incluirá los siguientes elementos:
 * Registro de usuarios con correo electrónico
@@ -159,6 +174,39 @@ Luego de realizar la investigación previa, hemos planteado una red social femin
 * Muro principal con posibilidad de compartir posts públicos
 * Perfil donde podrá ver sus post privados
 
+### Funcionalidad de Haven
+
+**Registro de usuarixs**
+
+- Registro con correo electrónico y contraseña: el usuario que quiera registrarse podrá realizarlo con un correo que será validado y una contraseña de más de 6 dígitos. Una vez registrado, se le enviará un correo de confirmación al email indicado.
+
+- Registro con redes sociales: el usuarix podrá registrarse con sus cuentas de Gmail y Facebook. El nombre, foto y email de dichas cuentas, se imprimirá en su perfil privado.
+
+**Login de usuarixs**
+
+- Login con correo electrónico: una vez que el usuarix haya confirmado su correo electrónico, podrá loguearse con los datos ingresados. Se validará que el correo ingresado tenga el formato correcto y se encuentre en la base de datos. Asimismo, si desea recuperar la contraseña, podrá realizarlo haciendo clic en "Olvidé contraseña".
+
+- Login con redes sociales: el ingreso con redes sociales a la web es directa al hacer clic en los botones de Facebook o Gmail.
+
+**Perfil de usuarixs - privado**
+
+- Sección de información de usuarix: aparecerá el nombre del usuarix si ingresó con Facebook o Gmail, o un nombre genérico si ingresó con correo electrónico. 
+
+- Sección de publicar: se encontrará una opción donde el usuarix podrá escribir un post según su preferencia y publicarlo en su muro.
+
+- Selector para escoger privacidad: se implementó un selector con la opción "Público" o "Privado" en donde el usuarix podrá seleccionar el tipo de publicación que quiere realizar. Si selecciona "Privado" el post irá a su muro personal, si selecciona "Público" el post irá al muro público general.
+
+- Opción de editar y eliminar: el usuarix podrá editar el post que publicó y también podrá eliminarlo. Esta última opción será confirmada con un alert.
+
+- Botón de likes: se implementó un botón contador de likes en cada publicación. Funcionará con usuarixs registrados y no registrados.
+
+**Muro público**
+
+- Publicaciones públicas: el usuarix registrado podrá ingresar al muro general y editar o eliminar el mensaje que publicó previamente. Sin embargo, si se trata de un visitante no registrado, solo podrá visualizar las publicaciones y darle likes.
+
+- Botón "Conócenos": si se trata de un visitante, se le habilitará el botón "Conócenos" donde se desplegará un modal con la descripción de la red social.
+
+- Botón "Volver": si se trata de un usuarix registrado, se habilitará el botón "Volver" que le permitirá al usuarix regresar a su perfil privado.
 
 ### Prototipo de alta fidelidad - N°1
 
@@ -198,6 +246,21 @@ El usuario manifestó lo siguiente:
 - Le agradó la idea de tener Normas de Convivencia pero se recomendó que sean más cortos y que se envíen también por correo electrónico.
 - Sugirió tener una sección donde se describa mejor el objetivo de la página.
 
+**Conclusiones**
+
+Tras el último testing, se verificó que el usuarix encontraba más accesible la red social y más fácil de identificar cada botón. Asimismo, se pudo comprobar que tener una sección de "Normas de convivencia" al registrarse creaba en el usuarix la sensación de seguridad y confianza.
+
+Asimismo, el usuarix se sintió identificado con los colores de la página, pues representaba el movimiento feminista.
+
+**Propuestas finales**
+
+Para que el usuarix haga un uso constante de la red social, se propone lo siguiente:
+
+- Promoción de la red social en grupos o comunidades feministas existentes como una red capaz de generar un espacio seguro donde compartir ideales y servir de apoyo a miembros del movimiento.
+- Testing constante de la plataforma para incorporar mejoras y controlar la privacidad.
+- Mejorar usabilidad de la interfaz principal incluyendo la descripción de la página desde un inicio.
+- Mejorar accesibilidad del perfil privado para una mejor visión en dispositivos mobile.
+- Incorporar la opción de comentarios y una sección de chat para incentivar más la conexión entre usuarixs.
 
 ## Equipo de trabajo
 * [Maria Elena Zúñiga](https://github.com/malenazp)
