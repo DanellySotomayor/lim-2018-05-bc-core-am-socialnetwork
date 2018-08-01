@@ -252,6 +252,35 @@ Tras el último testing, se verificó que el usuarix encontraba más accesible l
 
 Asimismo, el usuarix se sintió identificado con los colores de la página, pues representaba el movimiento feminista.
 
+**Testing con prototipo en HTML**
+
+SECCIÓN DE LOGIN
+![prototipo4](img/login.png)
+
+SECCIÓN DE PERFIL PRIVADO
+![prototipo5](img/perfil-privado.png)
+
+SECCIÓN DE MURO PÚBLICO
+![prototipo6](img/muro-publico.png)
+
+TESTING CON USUARIX
+![testing](img/testing-html.jpg)
+
+El usuarix manifestó lo siguiente:
+- Pudo registrarse y loguearse con un correo electrónico fácilmente.
+- Pudo registrarse y loguearse con Facebook y Gmail fácilmente.
+- Pudo recuperar contraseña y crear una nueva.
+- Se validó la colocación de un correo electrónico válido y un password de más de 6 caracteres al intentar registrarse.
+- Pudo publicar un post en su perfil privado y en el muro público.
+- Realizó con éxito la edición y eliminación de la publicación que realizó previamente.
+- Pudo dar like a su publicación y a publicaciones de otros usuarixs en el muro público.
+
+**Conclusiones**
+
+Se comprobó que las funcionalidades propuestas corrían de la manera correcta y los datos del usuarix se almacenaban en nuestra base de datos de Firebase.
+
+Por otro lado, según la manifestación del usuarix se deben implementar funciones adicionales para hacer la experiencia de usuarix más efectiva. Se propuso lo siguiente:
+
 **Propuestas finales**
 
 Para que el usuarix haga un uso constante de la red social, se propone lo siguiente:
